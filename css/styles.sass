@@ -1,0 +1,832 @@
+@import plugin
+.navigation
+  /*Code general to both versions of the navigation points
+  li
+    margin: 10px
+    padding: 3px
+  a
+    text-decoration: none
+    color: ghostwhite
+    font:
+      family: "Forgottb", sans-serif
+      size: 22px
+  li
+    &.selected, &:hover
+      a
+        text-decoration: line-through
+  +transition("0.5s")
+  /*Code for navigation bar before the window is scrolled to a certain point
+  &:not(.scrolled)
+    text-align: center
+    padding-top: 12.5vh
+    a
+      font-size: 30px
+  /*Code to be executed when the window is scrolled to a certain point
+  &.scrolled
+    background-color: #ac13ea
+    height: 80px
+    border-radius: 0 0 16px 16px
+    position: fixed
+    top: 0
+    z-index: 90
+    @supports (display: flex)
+      display: flex
+      align-items: center
+      justify-content: center
+/*The full screen background div
+//noinspection SassScssResolvedByNameOnly
+#fullScreen
+  width: 100%
+  height: 100vh
+  background-image: linear-gradient(to bottom right, rgba(219, 15, 58, 0.8), rgba(111, 43, 205, 0.8))
+  color: white
+  position: relative
+  overflow: hidden
+  h1
+    font:
+      size: 110px
+      family: 'Montserrat', sans-serif
+      weight: 800
+  p.lead
+    letter-spacing: 3px
+    font-size: 31px
+    color: lightgray
+  .positioned
+    position: absolute
+    bottom: 15%
+    padding: 1px
+  #backgroundVideo
+    width: 100%
+    position: absolute
+    z-index: -1
+
+#testcontent, .testcontent
+  width: 100%
+  background-color: rgba(0, 0, 0, 0)
+  +transition(1s)
+  .invisible
+    visibility: hidden
+  .visible
+    visibility: visible
+
+.full-container
+  width: 100%
+  padding: 0
+  .row
+    width: 100%
+  &::after
+    content: ''
+    clear: both
+  &.noPadding [class|="col-"]
+    padding: 0
+
+.noPadding
+  padding-left: 0
+  padding-right: 0
+
+.blogPost
+  position: relative
+  &:hover .overlay
+    background-color: rgba(0, 0, 0, 0.65)
+    +transition(1s)
+    cursor: pointer
+  .background
+    width: 100%
+    height: 100%
+    position: absolute
+    top: 0
+  .overlay
+    width: 100%
+    height: 100%
+    position: absolute
+    top: 0
+    background-color: rgba(0, 0, 0, 0.3)
+    z-index: 4
+    +transition(1s)
+    color: white
+    text-align: center
+    padding: 15px
+    h1
+      font:
+        family: "Montserrat", sans-serif
+        weight: 800
+        size: 35px
+      line-height: 140%
+      margin:
+        top: 25%
+    div.date
+      position: absolute
+      bottom: 6%
+      right: 15px
+      p
+        font:
+          family: "Montserrat", sans-serif
+          weight: 700
+
+.testcontent
+  background-color: #e9e9e9
+  /*margin-left: -40px
+  .skewed
+    .triangleBackground
+      &::after
+        content: ''
+        width: 100%
+        height: 100%
+        background-color: rgba(0, 0, 0, 0.34)
+        z-index: 1
+        position: absolute
+        top: 0
+    position: relative
+    .triangle.down-right
+      border-right: 90px solid #e9e9e9
+      border-left: 90px solid transparent
+      border-top: 430px solid transparent
+      height: 0
+      width: 0
+      position: absolute
+      top: 0
+      right: 15px
+
+.row
+  width: 100%
+
+.nextContent
+  padding:
+    top: 20vh
+    bottom: 20vh
+  position: relative
+  .image
+    position: relative
+    .overlay
+      position: absolute
+      top: 0
+      border-radius: 12px
+      background-color: rgba(0, 0, 0, 0.2)
+      z-index: 2
+      width: 90%
+      +transition(0.5s)
+    &:hover
+      .overlay
+        background-color: rgba(0, 0, 0, 0.65)
+        +transition(0.5s)
+  .descriptiveText
+    color: white
+    font:
+      family: 'Montserrat', sans-serif
+    position: absolute
+    left: 50%
+    z-index: 3
+  p
+    font-size: 16px
+    line-height: 180%
+  .descriptiveHeader
+    font-size: 25px
+  .fadeInOnScroll
+    opacity: 0
+    +transition('0.8s')
+    &.fadeIn
+      opacity: 1
+      +transition('0.8s')
+  width: 100%
+  height: 110vh
+  background-color: #e9e9e9
+  +transition('1s')
+  .triangle:not(.large)
+    height: 0
+    width: 0
+    border-right: 90px solid black
+    border-left: 90px solid transparent
+    border-top: 430px solid transparent
+  div#carouselIndicator
+    p
+      color: white
+      font:
+        family: 'Montserrat', sans-serif
+        size: 20px
+      margin-left: 5%
+      margin-top: 24px
+      float: right
+      .index
+        &.currentIndex
+        &.totalIndexes
+
+.borderRadii
+  border-radius: 12px
+  margin:
+    left: 5%
+  width: 95%
+  opacity: 0.6
+
+  z-index: 1
+
+.horizontal_bar
+  width: 0
+  background-color: white
+  height: 4px
+  +transition('1s')
+  &.lengthen
+    width: 100%
+    +transition('1s')
+
+.bordered
+  height: 50vh
+  &.relative
+    position: relative
+
+.triangle.down.large
+  height: 0
+  padding: 0
+  position: absolute
+  top: 0
+  right: 0
+  border-right: 300px solid #e9e9e9
+  border-bottom: 300px solid transparent
+  z-index: 9
+
+#image_behind_triangle
+  position: absolute
+  top: 0
+  right: 0
+  width: 33.33vw
+  img
+    width: 100%
+    border-radius: 11px
+    opacity: 0.6
+
+canvas#sewed_triangle
+  position: absolute
+  top: 0
+  right: 0
+  width: 300px
+  height: 300px
+  z-index: 10
+  /*border: 1px solid #eee
+  canvas#animatedLine
+    position: absolute
+    top: 0
+    left: 0
+    z-index: 10
+    -webkit-backface-visibility: hidden
+
+.carouselControlContainer
+  position: absolute
+  bottom: 10vh
+  text-align: center
+  div.percentageProgress
+    height: $percentageProgressSize
+    width: $percentageProgressSize
+    border-radius: 50%
+    background-color: transparent
+    margin: 0 auto
+    .mask, .fill
+      height: $percentageProgressSize
+      width: $percentageProgressSize
+      position: absolute
+      border-radius: 50%
+      -webkit-backface-visibility: hidden
+      +transition(0.2s)
+      &.retract
+        +transition(0.7s)
+    .mask
+      clip: rect(0px, $percentageProgressSize, $percentageProgressSize, $percentageProgressSize/2)
+      .fill
+        clip: rect(0px, $percentageProgressSize/2, $percentageProgressSize, 0px)
+  #carouselControl
+    width: $carouselControlSize
+    height: $carouselControlSize
+    border-radius: 50%
+    overflow: hidden
+    position: absolute
+    margin: ($percentageProgressSize - $carouselControlSize) / 2 auto 0 ($percentageProgressSize - $carouselControlSize) / 2
+    +transition(transform 3s ease-in-out)
+    &.left
+      +transform("rotate(-30deg)")
+      +transition(transform 2s ease-in-out)
+    &.right
+      +transform("rotate(30deg)")
+      +transition(transform 2s ease-in-out)
+    .control
+      width: 62%
+      height: 100%
+      padding: 0
+      margin: 0
+      cursor: pointer
+      display: inline-block
+      border: none
+      +transition(0.9s)
+      &.previous
+        position: relative
+        left: -30%
+        +transform('skew(-20deg)')
+      &.next
+        position: relative
+        right: -30%
+        top: -105%
+        +transform('skew(-20deg)')
+    i
+      color: white
+      font:
+        size: 21px
+      margin: 0
+      padding: 0
+      display: none
+  i
+    color: white
+    font:
+      size: 21px
+    margin: 0
+    padding: 0
+    position: relative
+    top: 33px
+
+.fix01.fixed
+  position: fixed
+  top: 80px
+  width: 75%
+
+#threeColumns1
+  position: relative
+  z-index: 75
+
+.contentBackgroundEffect
+  padding-bottom: 55px
+  background-color: white
+
+.dummy_div
+  width: 100%
+  height: 150vh
+  background-color: blue
+
+#nextParallaxSlide
+  padding:
+    left: 15px
+    right: 0
+  margin: 0
+  background-color: white
+  .contentBackgroundEffect
+    background-color: white
+  position: relative
+  z-index: 12
+
+.col-md-9.left
+  padding-left: 0
+
+.col-md-9.right
+  padding-right: 0
+
+#backgroundForegroundText01
+  margin-top: 30vh
+  padding-bottom: 30vh
+
+.higherLineHeight
+  line-height: 190%
+
+#featuredProducts
+  background-color: #DB0F3A
+  padding-bottom: 120px
+  padding-top: 60px
+  +transition(1s)
+  #featuredCarousel
+    position: relative
+    text-align: center
+    .ericItem
+      width: 50%
+      text-align: left
+      position: absolute
+      top: 0
+      +transition(1s)
+      &.fromLeft
+        +transform(scale(0.8))
+        width: 0.8  * 50%
+        position: absolute
+        top: 0
+        left: -15%
+        z-index: 10
+        opacity: 0
+        +transform(scale(0.8) rotateX(-20deg) rotateY(-25deg))
+        +transition(1s)
+        .clickEvent
+          height: 100%
+          width: 100%
+          position: absolute
+          top: 0
+          left: 0
+          z-index: 30
+          cursor: pointer
+      &.fromRight
+        +transform(scale(0.8))
+        width: 0.8  * 50%
+        position: absolute
+        top: 0
+        right: -15%
+        z-index: 10
+        opacity: 0
+        +transition(1s)
+        +transform(scale(0.8) rotateX(-20deg) rotateY(25deg))
+        .clickEvent
+          height: 100%
+          width: 100%
+          position: absolute
+          top: 0
+          left: 0
+          z-index: 30
+          cursor: pointer
+      &.selected
+        margin: 0 auto
+        position: relative
+        width: 50%
+        display: inline-block
+        z-index: 12
+        opacity: 1
+        .clickEvent
+          height: 0
+          width: 0
+      &.toRightFromVoid, &.fromRight.toRightFromVoid
+        +transform(scale(0.8))
+        width: 0.8 * 50%
+        position: absolute
+        top: 0
+        right: 0
+        z-index: 10
+        opacity: 0.5
+        display: inline-block
+        &.rotate
+          +transform(scale(0.8) rotateX(-20deg) rotateY(25deg))
+        .clickEvent
+          height: 100%
+          width: 100%
+          position: absolute
+          top: 0
+          left: 0
+          z-index: 30
+          cursor: pointer
+      &.toLeftFromVoid
+        left: 0
+        opacity: 0.5
+      &.toRightFromSelected, &.selected.toRightFromSelected
+        +transform(scale(0.8) rotateX(-20deg) rotateY(25deg))
+        opacity: 0.5
+        position: absolute
+        top: 0
+        right: 0
+        width: 0.8 * 50%
+        margin: 0
+      &.toLeftFromSelected, &.selected.toLeftFromSelected
+        +transform(scale(0.8) rotateX(-20deg) rotateY(-25deg))
+        opacity: 0.5
+        position: absolute
+        top: 0
+        left: 0
+        width: 0.8 * 50%
+        margin: 0
+      &.toSelectedFromLeft, &.left.toSelectedFromLeft, &.toSelectedFromRight, &.right.toSelectedFromRight
+        margin: 0 auto
+        position: relative
+        +transform(scale(1) rotateX(0deg) rotateY(0deg))
+        width: 50%
+        display: inline-block
+        z-index: 12
+        opacity: 1
+        .clickEvent
+          height: 0
+          width: 0
+      &.right, &.left
+        +transform(scale(0.8))
+        width: 0.8  * 50%
+        position: absolute
+        top: 0
+        z-index: 10
+        opacity: 0.5
+        display: inline-block
+        .clickEvent
+          height: 100%
+          width: 100%
+          position: absolute
+          top: 0
+          left: 0
+          z-index: 30
+          cursor: pointer
+      &.right
+        right: 0
+        +transition(1s)
+        &.rotate
+          +transform(scale(0.8) rotateX(-20deg) rotateY(25deg))
+      &.left
+        left: 0
+        +transition(1s)
+        &.rotate
+          +transform(scale(0.8) rotateX(-20deg) rotateY(-25deg))
+
+.callToShop
+  padding: 20px
+  color: #333
+  background-color: whitesmoke
+  font-weight: 500
+  font-size: 18px
+  border-radius: 9px
+  +transition(1s)
+  &:hover
+    background-color: #222222
+    color: whitesmoke
+
+.productImage
+  width: 100%
+
+.product
+  padding: 5px
+  background: whitesmoke
+  border-radius: 0 0 4px 4px
+  .bodyDiv
+    padding: 20px
+
+.averageRating
+  margin-top: 20px
+  margin-bottom: 20px
+
+.starRating
+  float: right
+  margin-right: 45px
+
+.numberRating
+  font-size: 26px
+  margin-left: 15px
+  font-weight: 500
+
+.description
+  p
+    height: 90px
+    overflow: hidden
+    position: relative
+    +transition(0.8s)
+    &::after
+      content: ''
+      width: 100%
+      background: linear-gradient(rgba(255, 255, 255, 0.0), whitesmoke)
+      position: absolute
+      bottom: 0
+      height: 90px
+      left: 0
+    &.readable
+      &::after
+        display: none
+
+#featuredCarousel
+  margin-top: 40px
+
+.readMore
+  font-size: 17px
+  margin-bottom: 20px
+  &:hover
+    text-decoration: underline
+
+.callMargin
+  border-radius: 3px
+  margin-left: 0
+  margin-right: 15px
+  +transition(0.8s)
+
+.callsToAction
+  padding-top: 34px
+  .viewProduct
+    padding: 14px
+    background-color: #d70e3d
+    @extend .callMargin
+    &:hover
+      background-color: #b50c35
+  .addToWishlist
+    color: darkslategray
+    font-size: 18px
+    padding: 12px
+    background-color: powderblue
+    +transition(0.8s)
+    @extend .callMargin
+    &:hover
+      color: #d70e3d
+  .addToBag
+    @extend .addToWishlist
+    background-color: #6F2BCD
+    color: #f5f5f5
+    &:hover
+      color: #f5f5f5
+  .purchaseProduct
+    @extend .viewProduct
+    background-color: #222
+    &:hover
+      background-color: #000
+
+.featuredCarousel, .featuredCarousel .ericItem
+  width: 100%
+
+#workedWith
+  padding-top: 60px
+  padding-bottom: 60px
+  background: #121212 url("../assets/img/casualshoes.jpg") no-repeat center
+  background-size: cover
+  color: whitesmoke
+  position: relative
+  .container
+    position: relative
+    z-index: 6
+  &::after
+    content: ''
+    position: absolute
+    background-color: rgba(0,0,0,0.9)
+    width: 100%
+    height: 100%
+    z-index: 4
+    left: 0
+    top: 0
+  #newsLetter
+    h1, p
+      margin-bottom: 25px
+    #newsLetterSubscription
+      padding: 15px 40px
+      background-color: #f5f5f5
+      min-width: 79%
+      max-width: 79%
+      border: 1px solid transparent
+      border-radius: 940px
+      color: #333
+      float: left
+      position: relative
+      z-index: 15
+      +transition(.8s)
+      &:focus
+        background-color: #cccccc
+    #newLetterSubscriptionButton
+      @extend #newsLetterSubscription
+      background-color: #6F2BCD
+      color: whitesmoke
+      min-width: 19%
+      max-width: 19%
+      right: 15%
+      padding-left: 0
+      padding-right: 0
+      text-align: center
+      z-index: 16
+      &:hover
+        background-color: #DB0F3A
+  #socialIcons
+    width: 100%
+    ul
+      width: inherit
+      list-style: none
+      li
+        display: inline-block
+        margin: 0 !important
+        float: left
+        padding: 30px
+        text-align: center
+        width: 27%
+        background-color: white
+        cursor: pointer
+        +transition(1s)
+        &:hover
+          a
+            color: white
+        &#facebookIcon:hover
+          background-color: #3C5A99
+        &#twitterIcon:hover
+          background-color: #1DA1F2
+        &#pinterstIcon:hover
+          background-color: #BD081C
+        &#instagramIcon:hover
+          background-color: #262626
+        &#linkedInIcon:hover
+          background-color: #0077B5
+        &#youtubeIcon:hover
+          background-color: #FF0000
+        &:first-of-type
+          border-top-left-radius: 9px
+        &:nth-of-type(3)
+          border-top-right-radius: 9px
+        &:nth-of-type(4)
+          border-bottom-left-radius: 9px
+        &:last-of-type
+          border-bottom-right-radius: 9px
+        /*
+          border-bottom: 1px solid rgba(0,0,0,0.2)
+          border-left: 1px solid rgba(0,0,0,0.2)
+          &:nth-of-type(1), &:nth-of-type(2), &:nth-of-type(3)
+            border-top: 1px solid rgba(0,0,0,0.2)
+          &:nth-of-type(3), &:nth-of-type(6)
+            border-right: 1px solid rgba(0,0,0,0.2)
+          */
+        a
+          color: #999999
+          text-align: center
+          font-size: 34px
+          +transition(1s)
+          &:hover
+            color: white
+#linkList
+  padding-top: 30px
+  padding-bottom: 30px
+  .linkLists
+    list-style: none
+    width: 100%
+    text-align: center
+    margin: 0
+    padding: 0
+    li
+      padding: 0 6px
+      display: inline-block
+      &:not(:first-of-type)
+        border-left: 1px solid #888
+      a
+        color: #333
+        font-size: 16px
+#copyRight
+  background-color: lightgray
+  padding: 20px
+  p
+    font-size: 14px
+    a
+      color: #6F2BCD
+@for $var from 1 through 100
+  .percentageProgress[data-progress-percent="#{$var}"]
+    .mask.full, .fill
+      +transform(rotate($onePercent * $var))
+    .fill.fix
+      +transform(rotate($onePercent * ($var * 2)))
+
+
+
+
+//About Page Individual Code
+#halfScreen
+  @extend #fullScreen
+  background: url("../assets/img/aboutCollage/Screenshot.png") fixed top center
+  background-size: cover
+  height: 100vh
+  position: relative
+  h1
+    font-size: 104px
+  p.lead
+    font-size: 24px
+  .about
+    position: absolute
+    bottom: 15%
+    padding: 1px
+#collage
+  margin-top: 5vh
+  width: 100%
+  position: relative
+  .short_picture
+    position: relative
+    top: 40px
+  .foregroundCollage
+    position: absolute
+    top: 4vh
+    left: 0
+    width: 100%
+    .collageRow
+      width: 100%
+      padding-left: 5%
+      margin: 0 auto
+      &::after
+        content: ''
+        clear: both
+      .collageColumn
+        width: 13%
+        float: left
+        padding: 2%
+        padding-top: 0
+        img
+          width: 100%
+  .backgroundCollage
+    width: 100%
+    .collageRow
+      width: 100%
+      text-align: center
+      .collageColumn
+        display: inline-block
+        width: 10%
+        opacity: 0.75
+        filter: blur(2px)
+        padding-left: 0.5%
+        padding-right: 0.5%
+        float: left
+        position: relative
+        &:first-of-type, &:last-of-type
+          top: 8vh
+        img
+          width: 100%
+      &:not(:first-of-type)
+        .collageColumn
+          top: 16vh
+          &:first-of-type
+            top: 9vh
+          &:last-of-type
+            top: 9vh
+      &::after
+        content: ''
+        clear: both
+.toppadding
+  padding: 40px 15px
+  background-color: #E9E9E9
+  min-height: 100vh
+  z-index: 70
+  position: relative
+.memberPhoto
+  width: 100%

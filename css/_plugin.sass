@@ -1,0 +1,219 @@
+=keyframes($content)
+  @keyframes #{$content}
+    @content
+  @-webkit-keyframes  #{$content}
+    @content
+  @-moz-keyframes  #{$content}
+    @content
+  @-o-keyframes #{$content}
+    @content
+  @-khtml-keyframes #{$content}
+    @content
+  @-ms-keyframes #{$content}
+    @content
+=transition($content)
+  transition: #{$content}
+  -webkit-transition: #{$content}
+  -moz-transition: #{$content}
+  -o-transition: #{$content}
+=animation($content)
+  animation: #{$content}
+  -webkit-animation: #{$content}
+  -moz-animation: #{$content}
+  -o-animation: #{$content}
+=transform($content)
+  transform: #{$content}
+  -webkit-transform: #{$content}
+  -moz-transform: #{$content}
+  -o-transform: #{$content}
+@font-face
+  src: url('../lib/fonts/Balqis.ttf')
+  font-family: "Balqis"
+@font-face
+  src: url('../lib/fonts/Audrey-Bold.otf')
+  font-family: "Audrey Bold"
+@font-face
+  src: url('../lib/fonts/Audrey-BoldOblique.otf')
+  font-family: "Audrey Bold Oblique"
+@font-face
+  src: url('../lib/fonts/Forgottb.ttf')
+  font-family: "Forgottb"
+@font-face
+  src: url('../lib/fonts/penna.otf')
+  font-family: "Penna"
+@font-face
+  src: url('../lib/fonts/segoeuil.ttf')
+  font-family: "Segoe UI Light"
+@font-face
+  src: url('../lib/fonts/GreatVibes-Regular.otf')
+  font-family: "Great Vibes Regular"
+.segoe
+  font-family: "Segoe UI Light", sans-serif
+.monster
+  font-family: "Montserrat", sans-serif
+.greatVibe
+  font-family: "Great Vibes Regular", "Montserrat", "Segoe UI Light", sans-serif
+.navigation
+  width: 100%
+  ul
+    list-style: none
+  li
+    display: inline-block
+.fullWidth
+  width: 100%
+$percentageProgressSize: 120px
+$carouselControlSize: 100px
+$onePercent: 180deg / 100
+.marginTop
+  margin-top: 35px
+  &.XL
+    margin-top: 65px
+h1.bold
+  font-weight: 700
+h1.title
+  font:
+    size: 55px
+  margin:
+    bottom: 0
+    top: 50px
+p.title
+  font:
+    size: 40px
+    weight: 400
+  margin:
+    bottom: 45px
+    top: 5px
+p:not(.title)
+  font:
+    size: 18px
+    family: "Montserrat", sans-serif
+  &:not(.higherLineHeight)
+    line-height: 160%
+h1.monster
+  &.L
+    font-size: 32px
+    &.toUpperCase
+      text-transform: capitalize
+  &.LX
+    font-size: 45px
+  &.XL
+    font-size: 54px
+    margin-bottom: 20px
+    &.toUpperCase
+      font-size: 44px
+  &.XXL
+    font-size: 90px
+    &.toUpperCase
+      font-size: 70px
+.whiteBackground
+  background-color: white
+.whiteForeground
+  color: ghostwhite
+  &:hover
+    color: ghostwhite
+.toUpperCase
+  text-transform: uppercase
+.hoverUnderline
+  text-decoration: none
+  &:hover
+    text-decoration: underline
+.noUnderline
+  text-decoration: none
+  &:hover
+    text-decoration: none
+  &:focus, &:visited
+    text-decoration: none
+.noPaddingHorizontal
+  padding:
+    left: 0
+    right: 0
+.noPaddingVertical
+  padding:
+    top: 0
+    bottom: 0
+.noPadding
+  padding: 0
+
+.viewportHeight
+  height: 100vh
+  width: 100%
+.miniViewportHeight
+  width: 100%
+  max-width: 100%
+  min-height: 100%
+  box-sizing: padding-box
+.yellowStar
+  color: gold
+  font-size: 18px
+.emptyStar
+  font-size: 18px
+  color: #cccccc
+.noTransition
+  +transition('0s !important')
+/*Code to handle the way the color of the background and the carousel control will appear on different iterations
+.nextContent
+  &.purple
+    &.darken
+      background-color: #0e0516
+      +transition('1s')
+    .fill
+      background-color: purple
+    #carouselControl
+      .control
+        &.previous
+          background-color: #D70E3D
+          &:hover
+            background-color: rgb(255, 19, 69)
+        &.next
+          background-color: #6F2BCD
+          &:hover
+            background-color: rgb(139, 49, 255)
+  &.yellow
+    &.darken
+      background-color: #160a00
+      +transition('1s')
+    .fill
+      background-color: #894b00
+    #carouselControl
+      .control
+        &.previous
+          background-color: #9ccde3
+          &:hover
+            background-color: #93c1d7
+        &.next
+          background-color: #b46c00
+          &:hover
+            background-color: orange
+  &.blue
+    &.darken
+      background-color: #000016
+      +transition('1s')
+    .fill
+      background-color: darkblue
+    #carouselControl
+      .control
+        &.previous
+          background-color: #c7254e
+          &:hover
+            background-color: #f52a59
+        &.next
+          background-color: #104f8c
+          &:hover
+            background-color: dodgerblue
+  &.pink
+    &.darken
+      background-color: #160a0e
+      +transition('1s')
+    .fill
+      background-color: #940c55
+    #carouselControl
+      .control
+        &.previous
+          background-color: rosybrown
+          &:hover
+            background-color: #f4baba
+        &.next
+          background-color: #b84e81
+          &:hover
+            background-color: hotpink
+

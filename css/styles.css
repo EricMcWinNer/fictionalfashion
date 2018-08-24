@@ -1,0 +1,2239 @@
+@font-face {
+  src: url("../lib/fonts/Balqis.ttf");
+  font-family: "Balqis"; }
+@font-face {
+  src: url("../lib/fonts/Audrey-Bold.otf");
+  font-family: "Audrey Bold"; }
+@font-face {
+  src: url("../lib/fonts/Audrey-BoldOblique.otf");
+  font-family: "Audrey Bold Oblique"; }
+@font-face {
+  src: url("../lib/fonts/Forgottb.ttf");
+  font-family: "Forgottb"; }
+@font-face {
+  src: url("../lib/fonts/penna.otf");
+  font-family: "Penna"; }
+@font-face {
+  src: url("../lib/fonts/segoeuil.ttf");
+  font-family: "Segoe UI Light"; }
+@font-face {
+  src: url("../lib/fonts/GreatVibes-Regular.otf");
+  font-family: "Great Vibes Regular"; }
+.segoe {
+  font-family: "Segoe UI Light", sans-serif; }
+
+.monster {
+  font-family: "Montserrat", sans-serif; }
+
+.greatVibe {
+  font-family: "Great Vibes Regular", "Montserrat", "Segoe UI Light", sans-serif; }
+
+.navigation {
+  width: 100%; }
+  .navigation ul {
+    list-style: none; }
+  .navigation li {
+    display: inline-block; }
+
+.fullWidth {
+  width: 100%; }
+
+.marginTop {
+  margin-top: 35px; }
+  .marginTop.XL {
+    margin-top: 65px; }
+
+h1.bold {
+  font-weight: 700; }
+
+h1.title {
+  font-size: 55px;
+  margin-bottom: 0;
+  margin-top: 50px; }
+
+p.title {
+  font-size: 40px;
+  font-weight: 400;
+  margin-bottom: 45px;
+  margin-top: 5px; }
+
+p:not(.title) {
+  font-size: 18px;
+  font-family: "Montserrat", sans-serif; }
+  p:not(.title):not(.higherLineHeight) {
+    line-height: 160%; }
+
+h1.monster.L {
+  font-size: 32px; }
+  h1.monster.L.toUpperCase {
+    text-transform: capitalize; }
+h1.monster.LX {
+  font-size: 45px; }
+h1.monster.XL {
+  font-size: 54px;
+  margin-bottom: 20px; }
+  h1.monster.XL.toUpperCase {
+    font-size: 44px; }
+h1.monster.XXL {
+  font-size: 90px; }
+  h1.monster.XXL.toUpperCase {
+    font-size: 70px; }
+
+.whiteBackground {
+  background-color: white; }
+
+.whiteForeground {
+  color: ghostwhite; }
+  .whiteForeground:hover {
+    color: ghostwhite; }
+
+.toUpperCase {
+  text-transform: uppercase; }
+
+.hoverUnderline {
+  text-decoration: none; }
+  .hoverUnderline:hover {
+    text-decoration: underline; }
+
+.noUnderline {
+  text-decoration: none; }
+  .noUnderline:hover {
+    text-decoration: none; }
+  .noUnderline:focus, .noUnderline:visited {
+    text-decoration: none; }
+
+.noPaddingHorizontal {
+  padding-left: 0;
+  padding-right: 0; }
+
+.noPaddingVertical {
+  padding-top: 0;
+  padding-bottom: 0; }
+
+.noPadding {
+  padding: 0; }
+
+.viewportHeight {
+  height: 100vh;
+  width: 100%; }
+
+.miniViewportHeight {
+  width: 100%;
+  max-width: 100%;
+  min-height: 100%;
+  box-sizing: padding-box; }
+
+.yellowStar {
+  color: gold;
+  font-size: 18px; }
+
+.emptyStar {
+  font-size: 18px;
+  color: #cccccc; }
+
+.noTransition {
+  transition: 0s !important;
+  -webkit-transition: 0s !important;
+  -moz-transition: 0s !important;
+  -o-transition: 0s !important; }
+
+/*Code to handle the way the color of the background and the carousel control will appear on different iterations */
+.nextContent.purple.darken {
+  background-color: #0e0516;
+  transition: 1s;
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -o-transition: 1s; }
+.nextContent.purple .fill {
+  background-color: purple; }
+.nextContent.purple #carouselControl .control.previous {
+  background-color: #D70E3D; }
+  .nextContent.purple #carouselControl .control.previous:hover {
+    background-color: #ff1345; }
+.nextContent.purple #carouselControl .control.next {
+  background-color: #6F2BCD; }
+  .nextContent.purple #carouselControl .control.next:hover {
+    background-color: #8b31ff; }
+.nextContent.yellow.darken {
+  background-color: #160a00;
+  transition: 1s;
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -o-transition: 1s; }
+.nextContent.yellow .fill {
+  background-color: #894b00; }
+.nextContent.yellow #carouselControl .control.previous {
+  background-color: #9ccde3; }
+  .nextContent.yellow #carouselControl .control.previous:hover {
+    background-color: #93c1d7; }
+.nextContent.yellow #carouselControl .control.next {
+  background-color: #b46c00; }
+  .nextContent.yellow #carouselControl .control.next:hover {
+    background-color: orange; }
+.nextContent.blue.darken {
+  background-color: #000016;
+  transition: 1s;
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -o-transition: 1s; }
+.nextContent.blue .fill {
+  background-color: darkblue; }
+.nextContent.blue #carouselControl .control.previous {
+  background-color: #c7254e; }
+  .nextContent.blue #carouselControl .control.previous:hover {
+    background-color: #f52a59; }
+.nextContent.blue #carouselControl .control.next {
+  background-color: #104f8c; }
+  .nextContent.blue #carouselControl .control.next:hover {
+    background-color: dodgerblue; }
+.nextContent.pink.darken {
+  background-color: #160a0e;
+  transition: 1s;
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -o-transition: 1s; }
+.nextContent.pink .fill {
+  background-color: #940c55; }
+.nextContent.pink #carouselControl .control.previous {
+  background-color: rosybrown; }
+  .nextContent.pink #carouselControl .control.previous:hover {
+    background-color: #f4baba; }
+.nextContent.pink #carouselControl .control.next {
+  background-color: #b84e81; }
+  .nextContent.pink #carouselControl .control.next:hover {
+    background-color: hotpink; }
+
+.navigation {
+  /*Code general to both versions of the navigation points */
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+  /*Code for navigation bar before the window is scrolled to a certain point */
+  /*Code to be executed when the window is scrolled to a certain point */ }
+  .navigation li {
+    margin: 10px;
+    padding: 3px; }
+  .navigation a {
+    text-decoration: none;
+    color: ghostwhite;
+    font-family: "Forgottb", sans-serif;
+    font-size: 22px; }
+  .navigation li.selected a, .navigation li:hover a {
+    text-decoration: line-through; }
+  .navigation:not(.scrolled) {
+    text-align: center;
+    padding-top: 12.5vh; }
+    .navigation:not(.scrolled) a {
+      font-size: 30px; }
+  .navigation.scrolled {
+    background-color: #ac13ea;
+    height: 80px;
+    border-radius: 0 0 16px 16px;
+    position: fixed;
+    top: 0;
+    z-index: 90; }
+    @supports (display: flex) {
+      .navigation.scrolled {
+        display: flex;
+        align-items: center;
+        justify-content: center; } }
+
+/*The full screen background div */
+#fullScreen, #halfScreen {
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(to bottom right, rgba(219, 15, 58, 0.8), rgba(111, 43, 205, 0.8));
+  color: white;
+  position: relative;
+  overflow: hidden; }
+  #fullScreen h1, #halfScreen h1 {
+    font-size: 110px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 800; }
+  #fullScreen p.lead, #halfScreen p.lead {
+    letter-spacing: 3px;
+    font-size: 31px;
+    color: lightgray; }
+  #fullScreen .positioned, #halfScreen .positioned {
+    position: absolute;
+    bottom: 15%;
+    padding: 1px; }
+  #fullScreen #backgroundVideo, #halfScreen #backgroundVideo {
+    width: 100%;
+    position: absolute;
+    z-index: -1; }
+
+#testcontent, .testcontent {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  transition: 1s;
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -o-transition: 1s; }
+  #testcontent .invisible, .testcontent .invisible {
+    visibility: hidden; }
+  #testcontent .visible, .testcontent .visible {
+    visibility: visible; }
+
+.full-container {
+  width: 100%;
+  padding: 0; }
+  .full-container .row {
+    width: 100%; }
+  .full-container::after {
+    content: "";
+    clear: both; }
+  .full-container.noPadding [class|="col-"] {
+    padding: 0; }
+
+.noPadding {
+  padding-left: 0;
+  padding-right: 0; }
+
+.blogPost {
+  position: relative; }
+  .blogPost:hover .overlay {
+    background-color: rgba(0, 0, 0, 0.65);
+    transition: 1s;
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    -o-transition: 1s;
+    cursor: pointer; }
+  .blogPost .background {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0; }
+  .blogPost .overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 4;
+    transition: 1s;
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    -o-transition: 1s;
+    color: white;
+    text-align: center;
+    padding: 15px; }
+    .blogPost .overlay h1 {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 800;
+      font-size: 35px;
+      line-height: 140%;
+      margin-top: 25%; }
+    .blogPost .overlay div.date {
+      position: absolute;
+      bottom: 6%;
+      right: 15px; }
+      .blogPost .overlay div.date p {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 700; }
+
+.testcontent {
+  background-color: #e9e9e9;
+  /*margin-left: -40px */ }
+  .testcontent .skewed {
+    position: relative; }
+    .testcontent .skewed .triangleBackground::after {
+      content: "";
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.34);
+      z-index: 1;
+      position: absolute;
+      top: 0; }
+    .testcontent .skewed .triangle.down-right {
+      border-right: 90px solid #e9e9e9;
+      border-left: 90px solid transparent;
+      border-top: 430px solid transparent;
+      height: 0;
+      width: 0;
+      position: absolute;
+      top: 0;
+      right: 15px; }
+
+.row {
+  width: 100%; }
+
+.nextContent {
+  padding-top: 20vh;
+  padding-bottom: 20vh;
+  position: relative;
+  width: 100%;
+  height: 110vh;
+  background-color: #e9e9e9;
+  transition: 1s;
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -o-transition: 1s; }
+  .nextContent .image {
+    position: relative; }
+    .nextContent .image .overlay {
+      position: absolute;
+      top: 0;
+      border-radius: 12px;
+      background-color: rgba(0, 0, 0, 0.2);
+      z-index: 2;
+      width: 90%;
+      transition: 0.5s;
+      -webkit-transition: 0.5s;
+      -moz-transition: 0.5s;
+      -o-transition: 0.5s; }
+    .nextContent .image:hover .overlay {
+      background-color: rgba(0, 0, 0, 0.65);
+      transition: 0.5s;
+      -webkit-transition: 0.5s;
+      -moz-transition: 0.5s;
+      -o-transition: 0.5s; }
+  .nextContent .descriptiveText {
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    position: absolute;
+    left: 50%;
+    z-index: 3; }
+  .nextContent p {
+    font-size: 16px;
+    line-height: 180%; }
+  .nextContent .descriptiveHeader {
+    font-size: 25px; }
+  .nextContent .fadeInOnScroll {
+    opacity: 0;
+    transition: 0.8s;
+    -webkit-transition: 0.8s;
+    -moz-transition: 0.8s;
+    -o-transition: 0.8s; }
+    .nextContent .fadeInOnScroll.fadeIn {
+      opacity: 1;
+      transition: 0.8s;
+      -webkit-transition: 0.8s;
+      -moz-transition: 0.8s;
+      -o-transition: 0.8s; }
+  .nextContent .triangle:not(.large) {
+    height: 0;
+    width: 0;
+    border-right: 90px solid black;
+    border-left: 90px solid transparent;
+    border-top: 430px solid transparent; }
+  .nextContent div#carouselIndicator p {
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    font-size: 20px;
+    margin-left: 5%;
+    margin-top: 24px;
+    float: right; }
+
+.borderRadii {
+  border-radius: 12px;
+  margin-left: 5%;
+  width: 95%;
+  opacity: 0.6;
+  z-index: 1; }
+
+.horizontal_bar {
+  width: 0;
+  background-color: white;
+  height: 4px;
+  transition: 1s;
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -o-transition: 1s; }
+  .horizontal_bar.lengthen {
+    width: 100%;
+    transition: 1s;
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    -o-transition: 1s; }
+
+.bordered {
+  height: 50vh; }
+  .bordered.relative {
+    position: relative; }
+
+.triangle.down.large {
+  height: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-right: 300px solid #e9e9e9;
+  border-bottom: 300px solid transparent;
+  z-index: 9; }
+
+#image_behind_triangle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 33.33vw; }
+  #image_behind_triangle img {
+    width: 100%;
+    border-radius: 11px;
+    opacity: 0.6; }
+
+canvas#sewed_triangle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 300px;
+  z-index: 10;
+  /*border: 1px solid #eee */ }
+  canvas#sewed_triangle canvas#animatedLine {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    -webkit-backface-visibility: hidden; }
+
+.carouselControlContainer {
+  position: absolute;
+  bottom: 10vh;
+  text-align: center; }
+  .carouselControlContainer div.percentageProgress {
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    background-color: transparent;
+    margin: 0 auto; }
+    .carouselControlContainer div.percentageProgress .mask, .carouselControlContainer div.percentageProgress .fill {
+      height: 120px;
+      width: 120px;
+      position: absolute;
+      border-radius: 50%;
+      -webkit-backface-visibility: hidden;
+      transition: 0.2s;
+      -webkit-transition: 0.2s;
+      -moz-transition: 0.2s;
+      -o-transition: 0.2s; }
+      .carouselControlContainer div.percentageProgress .mask.retract, .carouselControlContainer div.percentageProgress .fill.retract {
+        transition: 0.7s;
+        -webkit-transition: 0.7s;
+        -moz-transition: 0.7s;
+        -o-transition: 0.7s; }
+    .carouselControlContainer div.percentageProgress .mask {
+      clip: rect(0px, 120px, 120px, 60px); }
+      .carouselControlContainer div.percentageProgress .mask .fill {
+        clip: rect(0px, 60px, 120px, 0px); }
+  .carouselControlContainer #carouselControl {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: absolute;
+    margin: 10px auto 0 10px;
+    transition: transform 3s ease-in-out;
+    -webkit-transition: transform 3s ease-in-out;
+    -moz-transition: transform 3s ease-in-out;
+    -o-transition: transform 3s ease-in-out; }
+    .carouselControlContainer #carouselControl.left {
+      transform: rotate(-30deg);
+      -webkit-transform: rotate(-30deg);
+      -moz-transform: rotate(-30deg);
+      -o-transform: rotate(-30deg);
+      transition: transform 2s ease-in-out;
+      -webkit-transition: transform 2s ease-in-out;
+      -moz-transition: transform 2s ease-in-out;
+      -o-transition: transform 2s ease-in-out; }
+    .carouselControlContainer #carouselControl.right {
+      transform: rotate(30deg);
+      -webkit-transform: rotate(30deg);
+      -moz-transform: rotate(30deg);
+      -o-transform: rotate(30deg);
+      transition: transform 2s ease-in-out;
+      -webkit-transition: transform 2s ease-in-out;
+      -moz-transition: transform 2s ease-in-out;
+      -o-transition: transform 2s ease-in-out; }
+    .carouselControlContainer #carouselControl .control {
+      width: 62%;
+      height: 100%;
+      padding: 0;
+      margin: 0;
+      cursor: pointer;
+      display: inline-block;
+      border: none;
+      transition: 0.9s;
+      -webkit-transition: 0.9s;
+      -moz-transition: 0.9s;
+      -o-transition: 0.9s; }
+      .carouselControlContainer #carouselControl .control.previous {
+        position: relative;
+        left: -30%;
+        transform: skew(-20deg);
+        -webkit-transform: skew(-20deg);
+        -moz-transform: skew(-20deg);
+        -o-transform: skew(-20deg); }
+      .carouselControlContainer #carouselControl .control.next {
+        position: relative;
+        right: -30%;
+        top: -105%;
+        transform: skew(-20deg);
+        -webkit-transform: skew(-20deg);
+        -moz-transform: skew(-20deg);
+        -o-transform: skew(-20deg); }
+    .carouselControlContainer #carouselControl i {
+      color: white;
+      font-size: 21px;
+      margin: 0;
+      padding: 0;
+      display: none; }
+  .carouselControlContainer i {
+    color: white;
+    font-size: 21px;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    top: 33px; }
+
+.fix01.fixed {
+  position: fixed;
+  top: 80px;
+  width: 75%; }
+
+#threeColumns1 {
+  position: relative;
+  z-index: 75; }
+
+.contentBackgroundEffect {
+  padding-bottom: 55px;
+  background-color: white; }
+
+.dummy_div {
+  width: 100%;
+  height: 150vh;
+  background-color: blue; }
+
+#nextParallaxSlide {
+  padding-left: 15px;
+  padding-right: 0;
+  margin: 0;
+  background-color: white;
+  position: relative;
+  z-index: 12; }
+  #nextParallaxSlide .contentBackgroundEffect {
+    background-color: white; }
+
+.col-md-9.left {
+  padding-left: 0; }
+
+.col-md-9.right {
+  padding-right: 0; }
+
+#backgroundForegroundText01 {
+  margin-top: 30vh;
+  padding-bottom: 30vh; }
+
+.higherLineHeight {
+  line-height: 190%; }
+
+#featuredProducts {
+  background-color: #DB0F3A;
+  padding-bottom: 120px;
+  padding-top: 60px;
+  transition: 1s;
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -o-transition: 1s; }
+  #featuredProducts #featuredCarousel {
+    position: relative;
+    text-align: center; }
+    #featuredProducts #featuredCarousel .ericItem {
+      width: 50%;
+      text-align: left;
+      position: absolute;
+      top: 0;
+      transition: 1s;
+      -webkit-transition: 1s;
+      -moz-transition: 1s;
+      -o-transition: 1s; }
+      #featuredProducts #featuredCarousel .ericItem.fromLeft {
+        transform: scale(0.8);
+        -webkit-transform: scale(0.8);
+        -moz-transform: scale(0.8);
+        -o-transform: scale(0.8);
+        width: 40%;
+        position: absolute;
+        top: 0;
+        left: -15%;
+        z-index: 10;
+        opacity: 0;
+        transform: scale(0.8) rotateX(-20deg) rotateY(-25deg);
+        -webkit-transform: scale(0.8) rotateX(-20deg) rotateY(-25deg);
+        -moz-transform: scale(0.8) rotateX(-20deg) rotateY(-25deg);
+        -o-transform: scale(0.8) rotateX(-20deg) rotateY(-25deg);
+        transition: 1s;
+        -webkit-transition: 1s;
+        -moz-transition: 1s;
+        -o-transition: 1s; }
+        #featuredProducts #featuredCarousel .ericItem.fromLeft .clickEvent {
+          height: 100%;
+          width: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: 30;
+          cursor: pointer; }
+      #featuredProducts #featuredCarousel .ericItem.fromRight {
+        transform: scale(0.8);
+        -webkit-transform: scale(0.8);
+        -moz-transform: scale(0.8);
+        -o-transform: scale(0.8);
+        width: 40%;
+        position: absolute;
+        top: 0;
+        right: -15%;
+        z-index: 10;
+        opacity: 0;
+        transition: 1s;
+        -webkit-transition: 1s;
+        -moz-transition: 1s;
+        -o-transition: 1s;
+        transform: scale(0.8) rotateX(-20deg) rotateY(25deg);
+        -webkit-transform: scale(0.8) rotateX(-20deg) rotateY(25deg);
+        -moz-transform: scale(0.8) rotateX(-20deg) rotateY(25deg);
+        -o-transform: scale(0.8) rotateX(-20deg) rotateY(25deg); }
+        #featuredProducts #featuredCarousel .ericItem.fromRight .clickEvent {
+          height: 100%;
+          width: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: 30;
+          cursor: pointer; }
+      #featuredProducts #featuredCarousel .ericItem.selected {
+        margin: 0 auto;
+        position: relative;
+        width: 50%;
+        display: inline-block;
+        z-index: 12;
+        opacity: 1; }
+        #featuredProducts #featuredCarousel .ericItem.selected .clickEvent {
+          height: 0;
+          width: 0; }
+      #featuredProducts #featuredCarousel .ericItem.toRightFromVoid, #featuredProducts #featuredCarousel .ericItem.fromRight.toRightFromVoid {
+        transform: scale(0.8);
+        -webkit-transform: scale(0.8);
+        -moz-transform: scale(0.8);
+        -o-transform: scale(0.8);
+        width: 40%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 10;
+        opacity: 0.5;
+        display: inline-block; }
+        #featuredProducts #featuredCarousel .ericItem.toRightFromVoid.rotate, #featuredProducts #featuredCarousel .ericItem.fromRight.toRightFromVoid.rotate {
+          transform: scale(0.8) rotateX(-20deg) rotateY(25deg);
+          -webkit-transform: scale(0.8) rotateX(-20deg) rotateY(25deg);
+          -moz-transform: scale(0.8) rotateX(-20deg) rotateY(25deg);
+          -o-transform: scale(0.8) rotateX(-20deg) rotateY(25deg); }
+        #featuredProducts #featuredCarousel .ericItem.toRightFromVoid .clickEvent, #featuredProducts #featuredCarousel .ericItem.fromRight.toRightFromVoid .clickEvent {
+          height: 100%;
+          width: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: 30;
+          cursor: pointer; }
+      #featuredProducts #featuredCarousel .ericItem.toLeftFromVoid {
+        left: 0;
+        opacity: 0.5; }
+      #featuredProducts #featuredCarousel .ericItem.toRightFromSelected, #featuredProducts #featuredCarousel .ericItem.selected.toRightFromSelected {
+        transform: scale(0.8) rotateX(-20deg) rotateY(25deg);
+        -webkit-transform: scale(0.8) rotateX(-20deg) rotateY(25deg);
+        -moz-transform: scale(0.8) rotateX(-20deg) rotateY(25deg);
+        -o-transform: scale(0.8) rotateX(-20deg) rotateY(25deg);
+        opacity: 0.5;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 40%;
+        margin: 0; }
+      #featuredProducts #featuredCarousel .ericItem.toLeftFromSelected, #featuredProducts #featuredCarousel .ericItem.selected.toLeftFromSelected {
+        transform: scale(0.8) rotateX(-20deg) rotateY(-25deg);
+        -webkit-transform: scale(0.8) rotateX(-20deg) rotateY(-25deg);
+        -moz-transform: scale(0.8) rotateX(-20deg) rotateY(-25deg);
+        -o-transform: scale(0.8) rotateX(-20deg) rotateY(-25deg);
+        opacity: 0.5;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 40%;
+        margin: 0; }
+      #featuredProducts #featuredCarousel .ericItem.toSelectedFromLeft, #featuredProducts #featuredCarousel .ericItem.left.toSelectedFromLeft, #featuredProducts #featuredCarousel .ericItem.toSelectedFromRight, #featuredProducts #featuredCarousel .ericItem.right.toSelectedFromRight {
+        margin: 0 auto;
+        position: relative;
+        transform: scale(1) rotateX(0deg) rotateY(0deg);
+        -webkit-transform: scale(1) rotateX(0deg) rotateY(0deg);
+        -moz-transform: scale(1) rotateX(0deg) rotateY(0deg);
+        -o-transform: scale(1) rotateX(0deg) rotateY(0deg);
+        width: 50%;
+        display: inline-block;
+        z-index: 12;
+        opacity: 1; }
+        #featuredProducts #featuredCarousel .ericItem.toSelectedFromLeft .clickEvent, #featuredProducts #featuredCarousel .ericItem.left.toSelectedFromLeft .clickEvent, #featuredProducts #featuredCarousel .ericItem.toSelectedFromRight .clickEvent, #featuredProducts #featuredCarousel .ericItem.right.toSelectedFromRight .clickEvent {
+          height: 0;
+          width: 0; }
+      #featuredProducts #featuredCarousel .ericItem.right, #featuredProducts #featuredCarousel .ericItem.left {
+        transform: scale(0.8);
+        -webkit-transform: scale(0.8);
+        -moz-transform: scale(0.8);
+        -o-transform: scale(0.8);
+        width: 40%;
+        position: absolute;
+        top: 0;
+        z-index: 10;
+        opacity: 0.5;
+        display: inline-block; }
+        #featuredProducts #featuredCarousel .ericItem.right .clickEvent, #featuredProducts #featuredCarousel .ericItem.left .clickEvent {
+          height: 100%;
+          width: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: 30;
+          cursor: pointer; }
+      #featuredProducts #featuredCarousel .ericItem.right {
+        right: 0;
+        transition: 1s;
+        -webkit-transition: 1s;
+        -moz-transition: 1s;
+        -o-transition: 1s; }
+        #featuredProducts #featuredCarousel .ericItem.right.rotate {
+          transform: scale(0.8) rotateX(-20deg) rotateY(25deg);
+          -webkit-transform: scale(0.8) rotateX(-20deg) rotateY(25deg);
+          -moz-transform: scale(0.8) rotateX(-20deg) rotateY(25deg);
+          -o-transform: scale(0.8) rotateX(-20deg) rotateY(25deg); }
+      #featuredProducts #featuredCarousel .ericItem.left {
+        left: 0;
+        transition: 1s;
+        -webkit-transition: 1s;
+        -moz-transition: 1s;
+        -o-transition: 1s; }
+        #featuredProducts #featuredCarousel .ericItem.left.rotate {
+          transform: scale(0.8) rotateX(-20deg) rotateY(-25deg);
+          -webkit-transform: scale(0.8) rotateX(-20deg) rotateY(-25deg);
+          -moz-transform: scale(0.8) rotateX(-20deg) rotateY(-25deg);
+          -o-transform: scale(0.8) rotateX(-20deg) rotateY(-25deg); }
+
+.callToShop {
+  padding: 20px;
+  color: #333;
+  background-color: whitesmoke;
+  font-weight: 500;
+  font-size: 18px;
+  border-radius: 9px;
+  transition: 1s;
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -o-transition: 1s; }
+  .callToShop:hover {
+    background-color: #222222;
+    color: whitesmoke; }
+
+.productImage {
+  width: 100%; }
+
+.product {
+  padding: 5px;
+  background: whitesmoke;
+  border-radius: 0 0 4px 4px; }
+  .product .bodyDiv {
+    padding: 20px; }
+
+.averageRating {
+  margin-top: 20px;
+  margin-bottom: 20px; }
+
+.starRating {
+  float: right;
+  margin-right: 45px; }
+
+.numberRating {
+  font-size: 26px;
+  margin-left: 15px;
+  font-weight: 500; }
+
+.description p {
+  height: 90px;
+  overflow: hidden;
+  position: relative;
+  transition: 0.8s;
+  -webkit-transition: 0.8s;
+  -moz-transition: 0.8s;
+  -o-transition: 0.8s; }
+  .description p::after {
+    content: "";
+    width: 100%;
+    background: linear-gradient(rgba(255, 255, 255, 0), whitesmoke);
+    position: absolute;
+    bottom: 0;
+    height: 90px;
+    left: 0; }
+  .description p.readable::after {
+    display: none; }
+
+#featuredCarousel {
+  margin-top: 40px; }
+
+.readMore {
+  font-size: 17px;
+  margin-bottom: 20px; }
+  .readMore:hover {
+    text-decoration: underline; }
+
+.callMargin, .callsToAction .viewProduct, .callsToAction .purchaseProduct, .callsToAction .addToWishlist, .callsToAction .addToBag {
+  border-radius: 3px;
+  margin-left: 0;
+  margin-right: 15px;
+  transition: 0.8s;
+  -webkit-transition: 0.8s;
+  -moz-transition: 0.8s;
+  -o-transition: 0.8s; }
+
+.callsToAction {
+  padding-top: 34px; }
+  .callsToAction .viewProduct, .callsToAction .purchaseProduct {
+    padding: 14px;
+    background-color: #d70e3d; }
+    .callsToAction .viewProduct:hover, .callsToAction .purchaseProduct:hover {
+      background-color: #b50c35; }
+  .callsToAction .addToWishlist, .callsToAction .addToBag {
+    color: darkslategray;
+    font-size: 18px;
+    padding: 12px;
+    background-color: powderblue;
+    transition: 0.8s;
+    -webkit-transition: 0.8s;
+    -moz-transition: 0.8s;
+    -o-transition: 0.8s; }
+    .callsToAction .addToWishlist:hover, .callsToAction .addToBag:hover {
+      color: #d70e3d; }
+  .callsToAction .addToBag {
+    background-color: #6F2BCD;
+    color: #f5f5f5; }
+    .callsToAction .addToBag:hover {
+      color: #f5f5f5; }
+  .callsToAction .purchaseProduct {
+    background-color: #222; }
+    .callsToAction .purchaseProduct:hover {
+      background-color: #000; }
+
+.featuredCarousel, .featuredCarousel .ericItem {
+  width: 100%; }
+
+#workedWith {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background: #121212 url("../assets/img/casualshoes.jpg") no-repeat center;
+  background-size: cover;
+  color: whitesmoke;
+  position: relative; }
+  #workedWith .container {
+    position: relative;
+    z-index: 6; }
+  #workedWith::after {
+    content: "";
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.9);
+    width: 100%;
+    height: 100%;
+    z-index: 4;
+    left: 0;
+    top: 0; }
+  #workedWith #newsLetter h1, #workedWith #newsLetter p {
+    margin-bottom: 25px; }
+  #workedWith #newsLetter #newsLetterSubscription, #workedWith #newsLetter #newLetterSubscriptionButton {
+    padding: 15px 40px;
+    background-color: #f5f5f5;
+    min-width: 79%;
+    max-width: 79%;
+    border: 1px solid transparent;
+    border-radius: 940px;
+    color: #333;
+    float: left;
+    position: relative;
+    z-index: 15;
+    transition: 0.8s;
+    -webkit-transition: 0.8s;
+    -moz-transition: 0.8s;
+    -o-transition: 0.8s; }
+    #workedWith #newsLetter #newsLetterSubscription:focus, #workedWith #newsLetter #newLetterSubscriptionButton:focus {
+      background-color: #cccccc; }
+  #workedWith #newsLetter #newLetterSubscriptionButton {
+    background-color: #6F2BCD;
+    color: whitesmoke;
+    min-width: 19%;
+    max-width: 19%;
+    right: 15%;
+    padding-left: 0;
+    padding-right: 0;
+    text-align: center;
+    z-index: 16; }
+    #workedWith #newsLetter #newLetterSubscriptionButton:hover {
+      background-color: #DB0F3A; }
+  #workedWith #socialIcons {
+    width: 100%; }
+    #workedWith #socialIcons ul {
+      width: inherit;
+      list-style: none; }
+      #workedWith #socialIcons ul li {
+        display: inline-block;
+        margin: 0 !important;
+        float: left;
+        padding: 30px;
+        text-align: center;
+        width: 27%;
+        background-color: white;
+        cursor: pointer;
+        transition: 1s;
+        -webkit-transition: 1s;
+        -moz-transition: 1s;
+        -o-transition: 1s;
+        /* border-bottom: 1px solid rgba(0,0,0,0.2)
+         * border-left: 1px solid rgba(0,0,0,0.2)
+         * &:nth-of-type(1), &:nth-of-type(2), &:nth-of-type(3)
+         *   border-top: 1px solid rgba(0,0,0,0.2)
+         * &:nth-of-type(3), &:nth-of-type(6)
+         *   border-right: 1px solid rgba(0,0,0,0.2)
+         */ }
+        #workedWith #socialIcons ul li:hover a {
+          color: white; }
+        #workedWith #socialIcons ul li#facebookIcon:hover {
+          background-color: #3C5A99; }
+        #workedWith #socialIcons ul li#twitterIcon:hover {
+          background-color: #1DA1F2; }
+        #workedWith #socialIcons ul li#pinterstIcon:hover {
+          background-color: #BD081C; }
+        #workedWith #socialIcons ul li#instagramIcon:hover {
+          background-color: #262626; }
+        #workedWith #socialIcons ul li#linkedInIcon:hover {
+          background-color: #0077B5; }
+        #workedWith #socialIcons ul li#youtubeIcon:hover {
+          background-color: #FF0000; }
+        #workedWith #socialIcons ul li:first-of-type {
+          border-top-left-radius: 9px; }
+        #workedWith #socialIcons ul li:nth-of-type(3) {
+          border-top-right-radius: 9px; }
+        #workedWith #socialIcons ul li:nth-of-type(4) {
+          border-bottom-left-radius: 9px; }
+        #workedWith #socialIcons ul li:last-of-type {
+          border-bottom-right-radius: 9px; }
+        #workedWith #socialIcons ul li a {
+          color: #999999;
+          text-align: center;
+          font-size: 34px;
+          transition: 1s;
+          -webkit-transition: 1s;
+          -moz-transition: 1s;
+          -o-transition: 1s; }
+          #workedWith #socialIcons ul li a:hover {
+            color: white; }
+
+#linkList {
+  padding-top: 30px;
+  padding-bottom: 30px; }
+  #linkList .linkLists {
+    list-style: none;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    padding: 0; }
+    #linkList .linkLists li {
+      padding: 0 6px;
+      display: inline-block; }
+      #linkList .linkLists li:not(:first-of-type) {
+        border-left: 1px solid #888; }
+      #linkList .linkLists li a {
+        color: #333;
+        font-size: 16px; }
+
+#copyRight {
+  background-color: lightgray;
+  padding: 20px; }
+  #copyRight p {
+    font-size: 14px; }
+    #copyRight p a {
+      color: #6F2BCD; }
+
+.percentageProgress[data-progress-percent="1"] .mask.full, .percentageProgress[data-progress-percent="1"] .fill {
+  transform: rotate(1.8deg);
+  -webkit-transform: rotate(1.8deg);
+  -moz-transform: rotate(1.8deg);
+  -o-transform: rotate(1.8deg); }
+.percentageProgress[data-progress-percent="1"] .fill.fix {
+  transform: rotate(3.6deg);
+  -webkit-transform: rotate(3.6deg);
+  -moz-transform: rotate(3.6deg);
+  -o-transform: rotate(3.6deg); }
+
+.percentageProgress[data-progress-percent="2"] .mask.full, .percentageProgress[data-progress-percent="2"] .fill {
+  transform: rotate(3.6deg);
+  -webkit-transform: rotate(3.6deg);
+  -moz-transform: rotate(3.6deg);
+  -o-transform: rotate(3.6deg); }
+.percentageProgress[data-progress-percent="2"] .fill.fix {
+  transform: rotate(7.2deg);
+  -webkit-transform: rotate(7.2deg);
+  -moz-transform: rotate(7.2deg);
+  -o-transform: rotate(7.2deg); }
+
+.percentageProgress[data-progress-percent="3"] .mask.full, .percentageProgress[data-progress-percent="3"] .fill {
+  transform: rotate(5.4deg);
+  -webkit-transform: rotate(5.4deg);
+  -moz-transform: rotate(5.4deg);
+  -o-transform: rotate(5.4deg); }
+.percentageProgress[data-progress-percent="3"] .fill.fix {
+  transform: rotate(10.8deg);
+  -webkit-transform: rotate(10.8deg);
+  -moz-transform: rotate(10.8deg);
+  -o-transform: rotate(10.8deg); }
+
+.percentageProgress[data-progress-percent="4"] .mask.full, .percentageProgress[data-progress-percent="4"] .fill {
+  transform: rotate(7.2deg);
+  -webkit-transform: rotate(7.2deg);
+  -moz-transform: rotate(7.2deg);
+  -o-transform: rotate(7.2deg); }
+.percentageProgress[data-progress-percent="4"] .fill.fix {
+  transform: rotate(14.4deg);
+  -webkit-transform: rotate(14.4deg);
+  -moz-transform: rotate(14.4deg);
+  -o-transform: rotate(14.4deg); }
+
+.percentageProgress[data-progress-percent="5"] .mask.full, .percentageProgress[data-progress-percent="5"] .fill {
+  transform: rotate(9deg);
+  -webkit-transform: rotate(9deg);
+  -moz-transform: rotate(9deg);
+  -o-transform: rotate(9deg); }
+.percentageProgress[data-progress-percent="5"] .fill.fix {
+  transform: rotate(18deg);
+  -webkit-transform: rotate(18deg);
+  -moz-transform: rotate(18deg);
+  -o-transform: rotate(18deg); }
+
+.percentageProgress[data-progress-percent="6"] .mask.full, .percentageProgress[data-progress-percent="6"] .fill {
+  transform: rotate(10.8deg);
+  -webkit-transform: rotate(10.8deg);
+  -moz-transform: rotate(10.8deg);
+  -o-transform: rotate(10.8deg); }
+.percentageProgress[data-progress-percent="6"] .fill.fix {
+  transform: rotate(21.6deg);
+  -webkit-transform: rotate(21.6deg);
+  -moz-transform: rotate(21.6deg);
+  -o-transform: rotate(21.6deg); }
+
+.percentageProgress[data-progress-percent="7"] .mask.full, .percentageProgress[data-progress-percent="7"] .fill {
+  transform: rotate(12.6deg);
+  -webkit-transform: rotate(12.6deg);
+  -moz-transform: rotate(12.6deg);
+  -o-transform: rotate(12.6deg); }
+.percentageProgress[data-progress-percent="7"] .fill.fix {
+  transform: rotate(25.2deg);
+  -webkit-transform: rotate(25.2deg);
+  -moz-transform: rotate(25.2deg);
+  -o-transform: rotate(25.2deg); }
+
+.percentageProgress[data-progress-percent="8"] .mask.full, .percentageProgress[data-progress-percent="8"] .fill {
+  transform: rotate(14.4deg);
+  -webkit-transform: rotate(14.4deg);
+  -moz-transform: rotate(14.4deg);
+  -o-transform: rotate(14.4deg); }
+.percentageProgress[data-progress-percent="8"] .fill.fix {
+  transform: rotate(28.8deg);
+  -webkit-transform: rotate(28.8deg);
+  -moz-transform: rotate(28.8deg);
+  -o-transform: rotate(28.8deg); }
+
+.percentageProgress[data-progress-percent="9"] .mask.full, .percentageProgress[data-progress-percent="9"] .fill {
+  transform: rotate(16.2deg);
+  -webkit-transform: rotate(16.2deg);
+  -moz-transform: rotate(16.2deg);
+  -o-transform: rotate(16.2deg); }
+.percentageProgress[data-progress-percent="9"] .fill.fix {
+  transform: rotate(32.4deg);
+  -webkit-transform: rotate(32.4deg);
+  -moz-transform: rotate(32.4deg);
+  -o-transform: rotate(32.4deg); }
+
+.percentageProgress[data-progress-percent="10"] .mask.full, .percentageProgress[data-progress-percent="10"] .fill {
+  transform: rotate(18deg);
+  -webkit-transform: rotate(18deg);
+  -moz-transform: rotate(18deg);
+  -o-transform: rotate(18deg); }
+.percentageProgress[data-progress-percent="10"] .fill.fix {
+  transform: rotate(36deg);
+  -webkit-transform: rotate(36deg);
+  -moz-transform: rotate(36deg);
+  -o-transform: rotate(36deg); }
+
+.percentageProgress[data-progress-percent="11"] .mask.full, .percentageProgress[data-progress-percent="11"] .fill {
+  transform: rotate(19.8deg);
+  -webkit-transform: rotate(19.8deg);
+  -moz-transform: rotate(19.8deg);
+  -o-transform: rotate(19.8deg); }
+.percentageProgress[data-progress-percent="11"] .fill.fix {
+  transform: rotate(39.6deg);
+  -webkit-transform: rotate(39.6deg);
+  -moz-transform: rotate(39.6deg);
+  -o-transform: rotate(39.6deg); }
+
+.percentageProgress[data-progress-percent="12"] .mask.full, .percentageProgress[data-progress-percent="12"] .fill {
+  transform: rotate(21.6deg);
+  -webkit-transform: rotate(21.6deg);
+  -moz-transform: rotate(21.6deg);
+  -o-transform: rotate(21.6deg); }
+.percentageProgress[data-progress-percent="12"] .fill.fix {
+  transform: rotate(43.2deg);
+  -webkit-transform: rotate(43.2deg);
+  -moz-transform: rotate(43.2deg);
+  -o-transform: rotate(43.2deg); }
+
+.percentageProgress[data-progress-percent="13"] .mask.full, .percentageProgress[data-progress-percent="13"] .fill {
+  transform: rotate(23.4deg);
+  -webkit-transform: rotate(23.4deg);
+  -moz-transform: rotate(23.4deg);
+  -o-transform: rotate(23.4deg); }
+.percentageProgress[data-progress-percent="13"] .fill.fix {
+  transform: rotate(46.8deg);
+  -webkit-transform: rotate(46.8deg);
+  -moz-transform: rotate(46.8deg);
+  -o-transform: rotate(46.8deg); }
+
+.percentageProgress[data-progress-percent="14"] .mask.full, .percentageProgress[data-progress-percent="14"] .fill {
+  transform: rotate(25.2deg);
+  -webkit-transform: rotate(25.2deg);
+  -moz-transform: rotate(25.2deg);
+  -o-transform: rotate(25.2deg); }
+.percentageProgress[data-progress-percent="14"] .fill.fix {
+  transform: rotate(50.4deg);
+  -webkit-transform: rotate(50.4deg);
+  -moz-transform: rotate(50.4deg);
+  -o-transform: rotate(50.4deg); }
+
+.percentageProgress[data-progress-percent="15"] .mask.full, .percentageProgress[data-progress-percent="15"] .fill {
+  transform: rotate(27deg);
+  -webkit-transform: rotate(27deg);
+  -moz-transform: rotate(27deg);
+  -o-transform: rotate(27deg); }
+.percentageProgress[data-progress-percent="15"] .fill.fix {
+  transform: rotate(54deg);
+  -webkit-transform: rotate(54deg);
+  -moz-transform: rotate(54deg);
+  -o-transform: rotate(54deg); }
+
+.percentageProgress[data-progress-percent="16"] .mask.full, .percentageProgress[data-progress-percent="16"] .fill {
+  transform: rotate(28.8deg);
+  -webkit-transform: rotate(28.8deg);
+  -moz-transform: rotate(28.8deg);
+  -o-transform: rotate(28.8deg); }
+.percentageProgress[data-progress-percent="16"] .fill.fix {
+  transform: rotate(57.6deg);
+  -webkit-transform: rotate(57.6deg);
+  -moz-transform: rotate(57.6deg);
+  -o-transform: rotate(57.6deg); }
+
+.percentageProgress[data-progress-percent="17"] .mask.full, .percentageProgress[data-progress-percent="17"] .fill {
+  transform: rotate(30.6deg);
+  -webkit-transform: rotate(30.6deg);
+  -moz-transform: rotate(30.6deg);
+  -o-transform: rotate(30.6deg); }
+.percentageProgress[data-progress-percent="17"] .fill.fix {
+  transform: rotate(61.2deg);
+  -webkit-transform: rotate(61.2deg);
+  -moz-transform: rotate(61.2deg);
+  -o-transform: rotate(61.2deg); }
+
+.percentageProgress[data-progress-percent="18"] .mask.full, .percentageProgress[data-progress-percent="18"] .fill {
+  transform: rotate(32.4deg);
+  -webkit-transform: rotate(32.4deg);
+  -moz-transform: rotate(32.4deg);
+  -o-transform: rotate(32.4deg); }
+.percentageProgress[data-progress-percent="18"] .fill.fix {
+  transform: rotate(64.8deg);
+  -webkit-transform: rotate(64.8deg);
+  -moz-transform: rotate(64.8deg);
+  -o-transform: rotate(64.8deg); }
+
+.percentageProgress[data-progress-percent="19"] .mask.full, .percentageProgress[data-progress-percent="19"] .fill {
+  transform: rotate(34.2deg);
+  -webkit-transform: rotate(34.2deg);
+  -moz-transform: rotate(34.2deg);
+  -o-transform: rotate(34.2deg); }
+.percentageProgress[data-progress-percent="19"] .fill.fix {
+  transform: rotate(68.4deg);
+  -webkit-transform: rotate(68.4deg);
+  -moz-transform: rotate(68.4deg);
+  -o-transform: rotate(68.4deg); }
+
+.percentageProgress[data-progress-percent="20"] .mask.full, .percentageProgress[data-progress-percent="20"] .fill {
+  transform: rotate(36deg);
+  -webkit-transform: rotate(36deg);
+  -moz-transform: rotate(36deg);
+  -o-transform: rotate(36deg); }
+.percentageProgress[data-progress-percent="20"] .fill.fix {
+  transform: rotate(72deg);
+  -webkit-transform: rotate(72deg);
+  -moz-transform: rotate(72deg);
+  -o-transform: rotate(72deg); }
+
+.percentageProgress[data-progress-percent="21"] .mask.full, .percentageProgress[data-progress-percent="21"] .fill {
+  transform: rotate(37.8deg);
+  -webkit-transform: rotate(37.8deg);
+  -moz-transform: rotate(37.8deg);
+  -o-transform: rotate(37.8deg); }
+.percentageProgress[data-progress-percent="21"] .fill.fix {
+  transform: rotate(75.6deg);
+  -webkit-transform: rotate(75.6deg);
+  -moz-transform: rotate(75.6deg);
+  -o-transform: rotate(75.6deg); }
+
+.percentageProgress[data-progress-percent="22"] .mask.full, .percentageProgress[data-progress-percent="22"] .fill {
+  transform: rotate(39.6deg);
+  -webkit-transform: rotate(39.6deg);
+  -moz-transform: rotate(39.6deg);
+  -o-transform: rotate(39.6deg); }
+.percentageProgress[data-progress-percent="22"] .fill.fix {
+  transform: rotate(79.2deg);
+  -webkit-transform: rotate(79.2deg);
+  -moz-transform: rotate(79.2deg);
+  -o-transform: rotate(79.2deg); }
+
+.percentageProgress[data-progress-percent="23"] .mask.full, .percentageProgress[data-progress-percent="23"] .fill {
+  transform: rotate(41.4deg);
+  -webkit-transform: rotate(41.4deg);
+  -moz-transform: rotate(41.4deg);
+  -o-transform: rotate(41.4deg); }
+.percentageProgress[data-progress-percent="23"] .fill.fix {
+  transform: rotate(82.8deg);
+  -webkit-transform: rotate(82.8deg);
+  -moz-transform: rotate(82.8deg);
+  -o-transform: rotate(82.8deg); }
+
+.percentageProgress[data-progress-percent="24"] .mask.full, .percentageProgress[data-progress-percent="24"] .fill {
+  transform: rotate(43.2deg);
+  -webkit-transform: rotate(43.2deg);
+  -moz-transform: rotate(43.2deg);
+  -o-transform: rotate(43.2deg); }
+.percentageProgress[data-progress-percent="24"] .fill.fix {
+  transform: rotate(86.4deg);
+  -webkit-transform: rotate(86.4deg);
+  -moz-transform: rotate(86.4deg);
+  -o-transform: rotate(86.4deg); }
+
+.percentageProgress[data-progress-percent="25"] .mask.full, .percentageProgress[data-progress-percent="25"] .fill {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg); }
+.percentageProgress[data-progress-percent="25"] .fill.fix {
+  transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -o-transform: rotate(90deg); }
+
+.percentageProgress[data-progress-percent="26"] .mask.full, .percentageProgress[data-progress-percent="26"] .fill {
+  transform: rotate(46.8deg);
+  -webkit-transform: rotate(46.8deg);
+  -moz-transform: rotate(46.8deg);
+  -o-transform: rotate(46.8deg); }
+.percentageProgress[data-progress-percent="26"] .fill.fix {
+  transform: rotate(93.6deg);
+  -webkit-transform: rotate(93.6deg);
+  -moz-transform: rotate(93.6deg);
+  -o-transform: rotate(93.6deg); }
+
+.percentageProgress[data-progress-percent="27"] .mask.full, .percentageProgress[data-progress-percent="27"] .fill {
+  transform: rotate(48.6deg);
+  -webkit-transform: rotate(48.6deg);
+  -moz-transform: rotate(48.6deg);
+  -o-transform: rotate(48.6deg); }
+.percentageProgress[data-progress-percent="27"] .fill.fix {
+  transform: rotate(97.2deg);
+  -webkit-transform: rotate(97.2deg);
+  -moz-transform: rotate(97.2deg);
+  -o-transform: rotate(97.2deg); }
+
+.percentageProgress[data-progress-percent="28"] .mask.full, .percentageProgress[data-progress-percent="28"] .fill {
+  transform: rotate(50.4deg);
+  -webkit-transform: rotate(50.4deg);
+  -moz-transform: rotate(50.4deg);
+  -o-transform: rotate(50.4deg); }
+.percentageProgress[data-progress-percent="28"] .fill.fix {
+  transform: rotate(100.8deg);
+  -webkit-transform: rotate(100.8deg);
+  -moz-transform: rotate(100.8deg);
+  -o-transform: rotate(100.8deg); }
+
+.percentageProgress[data-progress-percent="29"] .mask.full, .percentageProgress[data-progress-percent="29"] .fill {
+  transform: rotate(52.2deg);
+  -webkit-transform: rotate(52.2deg);
+  -moz-transform: rotate(52.2deg);
+  -o-transform: rotate(52.2deg); }
+.percentageProgress[data-progress-percent="29"] .fill.fix {
+  transform: rotate(104.4deg);
+  -webkit-transform: rotate(104.4deg);
+  -moz-transform: rotate(104.4deg);
+  -o-transform: rotate(104.4deg); }
+
+.percentageProgress[data-progress-percent="30"] .mask.full, .percentageProgress[data-progress-percent="30"] .fill {
+  transform: rotate(54deg);
+  -webkit-transform: rotate(54deg);
+  -moz-transform: rotate(54deg);
+  -o-transform: rotate(54deg); }
+.percentageProgress[data-progress-percent="30"] .fill.fix {
+  transform: rotate(108deg);
+  -webkit-transform: rotate(108deg);
+  -moz-transform: rotate(108deg);
+  -o-transform: rotate(108deg); }
+
+.percentageProgress[data-progress-percent="31"] .mask.full, .percentageProgress[data-progress-percent="31"] .fill {
+  transform: rotate(55.8deg);
+  -webkit-transform: rotate(55.8deg);
+  -moz-transform: rotate(55.8deg);
+  -o-transform: rotate(55.8deg); }
+.percentageProgress[data-progress-percent="31"] .fill.fix {
+  transform: rotate(111.6deg);
+  -webkit-transform: rotate(111.6deg);
+  -moz-transform: rotate(111.6deg);
+  -o-transform: rotate(111.6deg); }
+
+.percentageProgress[data-progress-percent="32"] .mask.full, .percentageProgress[data-progress-percent="32"] .fill {
+  transform: rotate(57.6deg);
+  -webkit-transform: rotate(57.6deg);
+  -moz-transform: rotate(57.6deg);
+  -o-transform: rotate(57.6deg); }
+.percentageProgress[data-progress-percent="32"] .fill.fix {
+  transform: rotate(115.2deg);
+  -webkit-transform: rotate(115.2deg);
+  -moz-transform: rotate(115.2deg);
+  -o-transform: rotate(115.2deg); }
+
+.percentageProgress[data-progress-percent="33"] .mask.full, .percentageProgress[data-progress-percent="33"] .fill {
+  transform: rotate(59.4deg);
+  -webkit-transform: rotate(59.4deg);
+  -moz-transform: rotate(59.4deg);
+  -o-transform: rotate(59.4deg); }
+.percentageProgress[data-progress-percent="33"] .fill.fix {
+  transform: rotate(118.8deg);
+  -webkit-transform: rotate(118.8deg);
+  -moz-transform: rotate(118.8deg);
+  -o-transform: rotate(118.8deg); }
+
+.percentageProgress[data-progress-percent="34"] .mask.full, .percentageProgress[data-progress-percent="34"] .fill {
+  transform: rotate(61.2deg);
+  -webkit-transform: rotate(61.2deg);
+  -moz-transform: rotate(61.2deg);
+  -o-transform: rotate(61.2deg); }
+.percentageProgress[data-progress-percent="34"] .fill.fix {
+  transform: rotate(122.4deg);
+  -webkit-transform: rotate(122.4deg);
+  -moz-transform: rotate(122.4deg);
+  -o-transform: rotate(122.4deg); }
+
+.percentageProgress[data-progress-percent="35"] .mask.full, .percentageProgress[data-progress-percent="35"] .fill {
+  transform: rotate(63deg);
+  -webkit-transform: rotate(63deg);
+  -moz-transform: rotate(63deg);
+  -o-transform: rotate(63deg); }
+.percentageProgress[data-progress-percent="35"] .fill.fix {
+  transform: rotate(126deg);
+  -webkit-transform: rotate(126deg);
+  -moz-transform: rotate(126deg);
+  -o-transform: rotate(126deg); }
+
+.percentageProgress[data-progress-percent="36"] .mask.full, .percentageProgress[data-progress-percent="36"] .fill {
+  transform: rotate(64.8deg);
+  -webkit-transform: rotate(64.8deg);
+  -moz-transform: rotate(64.8deg);
+  -o-transform: rotate(64.8deg); }
+.percentageProgress[data-progress-percent="36"] .fill.fix {
+  transform: rotate(129.6deg);
+  -webkit-transform: rotate(129.6deg);
+  -moz-transform: rotate(129.6deg);
+  -o-transform: rotate(129.6deg); }
+
+.percentageProgress[data-progress-percent="37"] .mask.full, .percentageProgress[data-progress-percent="37"] .fill {
+  transform: rotate(66.6deg);
+  -webkit-transform: rotate(66.6deg);
+  -moz-transform: rotate(66.6deg);
+  -o-transform: rotate(66.6deg); }
+.percentageProgress[data-progress-percent="37"] .fill.fix {
+  transform: rotate(133.2deg);
+  -webkit-transform: rotate(133.2deg);
+  -moz-transform: rotate(133.2deg);
+  -o-transform: rotate(133.2deg); }
+
+.percentageProgress[data-progress-percent="38"] .mask.full, .percentageProgress[data-progress-percent="38"] .fill {
+  transform: rotate(68.4deg);
+  -webkit-transform: rotate(68.4deg);
+  -moz-transform: rotate(68.4deg);
+  -o-transform: rotate(68.4deg); }
+.percentageProgress[data-progress-percent="38"] .fill.fix {
+  transform: rotate(136.8deg);
+  -webkit-transform: rotate(136.8deg);
+  -moz-transform: rotate(136.8deg);
+  -o-transform: rotate(136.8deg); }
+
+.percentageProgress[data-progress-percent="39"] .mask.full, .percentageProgress[data-progress-percent="39"] .fill {
+  transform: rotate(70.2deg);
+  -webkit-transform: rotate(70.2deg);
+  -moz-transform: rotate(70.2deg);
+  -o-transform: rotate(70.2deg); }
+.percentageProgress[data-progress-percent="39"] .fill.fix {
+  transform: rotate(140.4deg);
+  -webkit-transform: rotate(140.4deg);
+  -moz-transform: rotate(140.4deg);
+  -o-transform: rotate(140.4deg); }
+
+.percentageProgress[data-progress-percent="40"] .mask.full, .percentageProgress[data-progress-percent="40"] .fill {
+  transform: rotate(72deg);
+  -webkit-transform: rotate(72deg);
+  -moz-transform: rotate(72deg);
+  -o-transform: rotate(72deg); }
+.percentageProgress[data-progress-percent="40"] .fill.fix {
+  transform: rotate(144deg);
+  -webkit-transform: rotate(144deg);
+  -moz-transform: rotate(144deg);
+  -o-transform: rotate(144deg); }
+
+.percentageProgress[data-progress-percent="41"] .mask.full, .percentageProgress[data-progress-percent="41"] .fill {
+  transform: rotate(73.8deg);
+  -webkit-transform: rotate(73.8deg);
+  -moz-transform: rotate(73.8deg);
+  -o-transform: rotate(73.8deg); }
+.percentageProgress[data-progress-percent="41"] .fill.fix {
+  transform: rotate(147.6deg);
+  -webkit-transform: rotate(147.6deg);
+  -moz-transform: rotate(147.6deg);
+  -o-transform: rotate(147.6deg); }
+
+.percentageProgress[data-progress-percent="42"] .mask.full, .percentageProgress[data-progress-percent="42"] .fill {
+  transform: rotate(75.6deg);
+  -webkit-transform: rotate(75.6deg);
+  -moz-transform: rotate(75.6deg);
+  -o-transform: rotate(75.6deg); }
+.percentageProgress[data-progress-percent="42"] .fill.fix {
+  transform: rotate(151.2deg);
+  -webkit-transform: rotate(151.2deg);
+  -moz-transform: rotate(151.2deg);
+  -o-transform: rotate(151.2deg); }
+
+.percentageProgress[data-progress-percent="43"] .mask.full, .percentageProgress[data-progress-percent="43"] .fill {
+  transform: rotate(77.4deg);
+  -webkit-transform: rotate(77.4deg);
+  -moz-transform: rotate(77.4deg);
+  -o-transform: rotate(77.4deg); }
+.percentageProgress[data-progress-percent="43"] .fill.fix {
+  transform: rotate(154.8deg);
+  -webkit-transform: rotate(154.8deg);
+  -moz-transform: rotate(154.8deg);
+  -o-transform: rotate(154.8deg); }
+
+.percentageProgress[data-progress-percent="44"] .mask.full, .percentageProgress[data-progress-percent="44"] .fill {
+  transform: rotate(79.2deg);
+  -webkit-transform: rotate(79.2deg);
+  -moz-transform: rotate(79.2deg);
+  -o-transform: rotate(79.2deg); }
+.percentageProgress[data-progress-percent="44"] .fill.fix {
+  transform: rotate(158.4deg);
+  -webkit-transform: rotate(158.4deg);
+  -moz-transform: rotate(158.4deg);
+  -o-transform: rotate(158.4deg); }
+
+.percentageProgress[data-progress-percent="45"] .mask.full, .percentageProgress[data-progress-percent="45"] .fill {
+  transform: rotate(81deg);
+  -webkit-transform: rotate(81deg);
+  -moz-transform: rotate(81deg);
+  -o-transform: rotate(81deg); }
+.percentageProgress[data-progress-percent="45"] .fill.fix {
+  transform: rotate(162deg);
+  -webkit-transform: rotate(162deg);
+  -moz-transform: rotate(162deg);
+  -o-transform: rotate(162deg); }
+
+.percentageProgress[data-progress-percent="46"] .mask.full, .percentageProgress[data-progress-percent="46"] .fill {
+  transform: rotate(82.8deg);
+  -webkit-transform: rotate(82.8deg);
+  -moz-transform: rotate(82.8deg);
+  -o-transform: rotate(82.8deg); }
+.percentageProgress[data-progress-percent="46"] .fill.fix {
+  transform: rotate(165.6deg);
+  -webkit-transform: rotate(165.6deg);
+  -moz-transform: rotate(165.6deg);
+  -o-transform: rotate(165.6deg); }
+
+.percentageProgress[data-progress-percent="47"] .mask.full, .percentageProgress[data-progress-percent="47"] .fill {
+  transform: rotate(84.6deg);
+  -webkit-transform: rotate(84.6deg);
+  -moz-transform: rotate(84.6deg);
+  -o-transform: rotate(84.6deg); }
+.percentageProgress[data-progress-percent="47"] .fill.fix {
+  transform: rotate(169.2deg);
+  -webkit-transform: rotate(169.2deg);
+  -moz-transform: rotate(169.2deg);
+  -o-transform: rotate(169.2deg); }
+
+.percentageProgress[data-progress-percent="48"] .mask.full, .percentageProgress[data-progress-percent="48"] .fill {
+  transform: rotate(86.4deg);
+  -webkit-transform: rotate(86.4deg);
+  -moz-transform: rotate(86.4deg);
+  -o-transform: rotate(86.4deg); }
+.percentageProgress[data-progress-percent="48"] .fill.fix {
+  transform: rotate(172.8deg);
+  -webkit-transform: rotate(172.8deg);
+  -moz-transform: rotate(172.8deg);
+  -o-transform: rotate(172.8deg); }
+
+.percentageProgress[data-progress-percent="49"] .mask.full, .percentageProgress[data-progress-percent="49"] .fill {
+  transform: rotate(88.2deg);
+  -webkit-transform: rotate(88.2deg);
+  -moz-transform: rotate(88.2deg);
+  -o-transform: rotate(88.2deg); }
+.percentageProgress[data-progress-percent="49"] .fill.fix {
+  transform: rotate(176.4deg);
+  -webkit-transform: rotate(176.4deg);
+  -moz-transform: rotate(176.4deg);
+  -o-transform: rotate(176.4deg); }
+
+.percentageProgress[data-progress-percent="50"] .mask.full, .percentageProgress[data-progress-percent="50"] .fill {
+  transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -o-transform: rotate(90deg); }
+.percentageProgress[data-progress-percent="50"] .fill.fix {
+  transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -o-transform: rotate(180deg); }
+
+.percentageProgress[data-progress-percent="51"] .mask.full, .percentageProgress[data-progress-percent="51"] .fill {
+  transform: rotate(91.8deg);
+  -webkit-transform: rotate(91.8deg);
+  -moz-transform: rotate(91.8deg);
+  -o-transform: rotate(91.8deg); }
+.percentageProgress[data-progress-percent="51"] .fill.fix {
+  transform: rotate(183.6deg);
+  -webkit-transform: rotate(183.6deg);
+  -moz-transform: rotate(183.6deg);
+  -o-transform: rotate(183.6deg); }
+
+.percentageProgress[data-progress-percent="52"] .mask.full, .percentageProgress[data-progress-percent="52"] .fill {
+  transform: rotate(93.6deg);
+  -webkit-transform: rotate(93.6deg);
+  -moz-transform: rotate(93.6deg);
+  -o-transform: rotate(93.6deg); }
+.percentageProgress[data-progress-percent="52"] .fill.fix {
+  transform: rotate(187.2deg);
+  -webkit-transform: rotate(187.2deg);
+  -moz-transform: rotate(187.2deg);
+  -o-transform: rotate(187.2deg); }
+
+.percentageProgress[data-progress-percent="53"] .mask.full, .percentageProgress[data-progress-percent="53"] .fill {
+  transform: rotate(95.4deg);
+  -webkit-transform: rotate(95.4deg);
+  -moz-transform: rotate(95.4deg);
+  -o-transform: rotate(95.4deg); }
+.percentageProgress[data-progress-percent="53"] .fill.fix {
+  transform: rotate(190.8deg);
+  -webkit-transform: rotate(190.8deg);
+  -moz-transform: rotate(190.8deg);
+  -o-transform: rotate(190.8deg); }
+
+.percentageProgress[data-progress-percent="54"] .mask.full, .percentageProgress[data-progress-percent="54"] .fill {
+  transform: rotate(97.2deg);
+  -webkit-transform: rotate(97.2deg);
+  -moz-transform: rotate(97.2deg);
+  -o-transform: rotate(97.2deg); }
+.percentageProgress[data-progress-percent="54"] .fill.fix {
+  transform: rotate(194.4deg);
+  -webkit-transform: rotate(194.4deg);
+  -moz-transform: rotate(194.4deg);
+  -o-transform: rotate(194.4deg); }
+
+.percentageProgress[data-progress-percent="55"] .mask.full, .percentageProgress[data-progress-percent="55"] .fill {
+  transform: rotate(99deg);
+  -webkit-transform: rotate(99deg);
+  -moz-transform: rotate(99deg);
+  -o-transform: rotate(99deg); }
+.percentageProgress[data-progress-percent="55"] .fill.fix {
+  transform: rotate(198deg);
+  -webkit-transform: rotate(198deg);
+  -moz-transform: rotate(198deg);
+  -o-transform: rotate(198deg); }
+
+.percentageProgress[data-progress-percent="56"] .mask.full, .percentageProgress[data-progress-percent="56"] .fill {
+  transform: rotate(100.8deg);
+  -webkit-transform: rotate(100.8deg);
+  -moz-transform: rotate(100.8deg);
+  -o-transform: rotate(100.8deg); }
+.percentageProgress[data-progress-percent="56"] .fill.fix {
+  transform: rotate(201.6deg);
+  -webkit-transform: rotate(201.6deg);
+  -moz-transform: rotate(201.6deg);
+  -o-transform: rotate(201.6deg); }
+
+.percentageProgress[data-progress-percent="57"] .mask.full, .percentageProgress[data-progress-percent="57"] .fill {
+  transform: rotate(102.6deg);
+  -webkit-transform: rotate(102.6deg);
+  -moz-transform: rotate(102.6deg);
+  -o-transform: rotate(102.6deg); }
+.percentageProgress[data-progress-percent="57"] .fill.fix {
+  transform: rotate(205.2deg);
+  -webkit-transform: rotate(205.2deg);
+  -moz-transform: rotate(205.2deg);
+  -o-transform: rotate(205.2deg); }
+
+.percentageProgress[data-progress-percent="58"] .mask.full, .percentageProgress[data-progress-percent="58"] .fill {
+  transform: rotate(104.4deg);
+  -webkit-transform: rotate(104.4deg);
+  -moz-transform: rotate(104.4deg);
+  -o-transform: rotate(104.4deg); }
+.percentageProgress[data-progress-percent="58"] .fill.fix {
+  transform: rotate(208.8deg);
+  -webkit-transform: rotate(208.8deg);
+  -moz-transform: rotate(208.8deg);
+  -o-transform: rotate(208.8deg); }
+
+.percentageProgress[data-progress-percent="59"] .mask.full, .percentageProgress[data-progress-percent="59"] .fill {
+  transform: rotate(106.2deg);
+  -webkit-transform: rotate(106.2deg);
+  -moz-transform: rotate(106.2deg);
+  -o-transform: rotate(106.2deg); }
+.percentageProgress[data-progress-percent="59"] .fill.fix {
+  transform: rotate(212.4deg);
+  -webkit-transform: rotate(212.4deg);
+  -moz-transform: rotate(212.4deg);
+  -o-transform: rotate(212.4deg); }
+
+.percentageProgress[data-progress-percent="60"] .mask.full, .percentageProgress[data-progress-percent="60"] .fill {
+  transform: rotate(108deg);
+  -webkit-transform: rotate(108deg);
+  -moz-transform: rotate(108deg);
+  -o-transform: rotate(108deg); }
+.percentageProgress[data-progress-percent="60"] .fill.fix {
+  transform: rotate(216deg);
+  -webkit-transform: rotate(216deg);
+  -moz-transform: rotate(216deg);
+  -o-transform: rotate(216deg); }
+
+.percentageProgress[data-progress-percent="61"] .mask.full, .percentageProgress[data-progress-percent="61"] .fill {
+  transform: rotate(109.8deg);
+  -webkit-transform: rotate(109.8deg);
+  -moz-transform: rotate(109.8deg);
+  -o-transform: rotate(109.8deg); }
+.percentageProgress[data-progress-percent="61"] .fill.fix {
+  transform: rotate(219.6deg);
+  -webkit-transform: rotate(219.6deg);
+  -moz-transform: rotate(219.6deg);
+  -o-transform: rotate(219.6deg); }
+
+.percentageProgress[data-progress-percent="62"] .mask.full, .percentageProgress[data-progress-percent="62"] .fill {
+  transform: rotate(111.6deg);
+  -webkit-transform: rotate(111.6deg);
+  -moz-transform: rotate(111.6deg);
+  -o-transform: rotate(111.6deg); }
+.percentageProgress[data-progress-percent="62"] .fill.fix {
+  transform: rotate(223.2deg);
+  -webkit-transform: rotate(223.2deg);
+  -moz-transform: rotate(223.2deg);
+  -o-transform: rotate(223.2deg); }
+
+.percentageProgress[data-progress-percent="63"] .mask.full, .percentageProgress[data-progress-percent="63"] .fill {
+  transform: rotate(113.4deg);
+  -webkit-transform: rotate(113.4deg);
+  -moz-transform: rotate(113.4deg);
+  -o-transform: rotate(113.4deg); }
+.percentageProgress[data-progress-percent="63"] .fill.fix {
+  transform: rotate(226.8deg);
+  -webkit-transform: rotate(226.8deg);
+  -moz-transform: rotate(226.8deg);
+  -o-transform: rotate(226.8deg); }
+
+.percentageProgress[data-progress-percent="64"] .mask.full, .percentageProgress[data-progress-percent="64"] .fill {
+  transform: rotate(115.2deg);
+  -webkit-transform: rotate(115.2deg);
+  -moz-transform: rotate(115.2deg);
+  -o-transform: rotate(115.2deg); }
+.percentageProgress[data-progress-percent="64"] .fill.fix {
+  transform: rotate(230.4deg);
+  -webkit-transform: rotate(230.4deg);
+  -moz-transform: rotate(230.4deg);
+  -o-transform: rotate(230.4deg); }
+
+.percentageProgress[data-progress-percent="65"] .mask.full, .percentageProgress[data-progress-percent="65"] .fill {
+  transform: rotate(117deg);
+  -webkit-transform: rotate(117deg);
+  -moz-transform: rotate(117deg);
+  -o-transform: rotate(117deg); }
+.percentageProgress[data-progress-percent="65"] .fill.fix {
+  transform: rotate(234deg);
+  -webkit-transform: rotate(234deg);
+  -moz-transform: rotate(234deg);
+  -o-transform: rotate(234deg); }
+
+.percentageProgress[data-progress-percent="66"] .mask.full, .percentageProgress[data-progress-percent="66"] .fill {
+  transform: rotate(118.8deg);
+  -webkit-transform: rotate(118.8deg);
+  -moz-transform: rotate(118.8deg);
+  -o-transform: rotate(118.8deg); }
+.percentageProgress[data-progress-percent="66"] .fill.fix {
+  transform: rotate(237.6deg);
+  -webkit-transform: rotate(237.6deg);
+  -moz-transform: rotate(237.6deg);
+  -o-transform: rotate(237.6deg); }
+
+.percentageProgress[data-progress-percent="67"] .mask.full, .percentageProgress[data-progress-percent="67"] .fill {
+  transform: rotate(120.6deg);
+  -webkit-transform: rotate(120.6deg);
+  -moz-transform: rotate(120.6deg);
+  -o-transform: rotate(120.6deg); }
+.percentageProgress[data-progress-percent="67"] .fill.fix {
+  transform: rotate(241.2deg);
+  -webkit-transform: rotate(241.2deg);
+  -moz-transform: rotate(241.2deg);
+  -o-transform: rotate(241.2deg); }
+
+.percentageProgress[data-progress-percent="68"] .mask.full, .percentageProgress[data-progress-percent="68"] .fill {
+  transform: rotate(122.4deg);
+  -webkit-transform: rotate(122.4deg);
+  -moz-transform: rotate(122.4deg);
+  -o-transform: rotate(122.4deg); }
+.percentageProgress[data-progress-percent="68"] .fill.fix {
+  transform: rotate(244.8deg);
+  -webkit-transform: rotate(244.8deg);
+  -moz-transform: rotate(244.8deg);
+  -o-transform: rotate(244.8deg); }
+
+.percentageProgress[data-progress-percent="69"] .mask.full, .percentageProgress[data-progress-percent="69"] .fill {
+  transform: rotate(124.2deg);
+  -webkit-transform: rotate(124.2deg);
+  -moz-transform: rotate(124.2deg);
+  -o-transform: rotate(124.2deg); }
+.percentageProgress[data-progress-percent="69"] .fill.fix {
+  transform: rotate(248.4deg);
+  -webkit-transform: rotate(248.4deg);
+  -moz-transform: rotate(248.4deg);
+  -o-transform: rotate(248.4deg); }
+
+.percentageProgress[data-progress-percent="70"] .mask.full, .percentageProgress[data-progress-percent="70"] .fill {
+  transform: rotate(126deg);
+  -webkit-transform: rotate(126deg);
+  -moz-transform: rotate(126deg);
+  -o-transform: rotate(126deg); }
+.percentageProgress[data-progress-percent="70"] .fill.fix {
+  transform: rotate(252deg);
+  -webkit-transform: rotate(252deg);
+  -moz-transform: rotate(252deg);
+  -o-transform: rotate(252deg); }
+
+.percentageProgress[data-progress-percent="71"] .mask.full, .percentageProgress[data-progress-percent="71"] .fill {
+  transform: rotate(127.8deg);
+  -webkit-transform: rotate(127.8deg);
+  -moz-transform: rotate(127.8deg);
+  -o-transform: rotate(127.8deg); }
+.percentageProgress[data-progress-percent="71"] .fill.fix {
+  transform: rotate(255.6deg);
+  -webkit-transform: rotate(255.6deg);
+  -moz-transform: rotate(255.6deg);
+  -o-transform: rotate(255.6deg); }
+
+.percentageProgress[data-progress-percent="72"] .mask.full, .percentageProgress[data-progress-percent="72"] .fill {
+  transform: rotate(129.6deg);
+  -webkit-transform: rotate(129.6deg);
+  -moz-transform: rotate(129.6deg);
+  -o-transform: rotate(129.6deg); }
+.percentageProgress[data-progress-percent="72"] .fill.fix {
+  transform: rotate(259.2deg);
+  -webkit-transform: rotate(259.2deg);
+  -moz-transform: rotate(259.2deg);
+  -o-transform: rotate(259.2deg); }
+
+.percentageProgress[data-progress-percent="73"] .mask.full, .percentageProgress[data-progress-percent="73"] .fill {
+  transform: rotate(131.4deg);
+  -webkit-transform: rotate(131.4deg);
+  -moz-transform: rotate(131.4deg);
+  -o-transform: rotate(131.4deg); }
+.percentageProgress[data-progress-percent="73"] .fill.fix {
+  transform: rotate(262.8deg);
+  -webkit-transform: rotate(262.8deg);
+  -moz-transform: rotate(262.8deg);
+  -o-transform: rotate(262.8deg); }
+
+.percentageProgress[data-progress-percent="74"] .mask.full, .percentageProgress[data-progress-percent="74"] .fill {
+  transform: rotate(133.2deg);
+  -webkit-transform: rotate(133.2deg);
+  -moz-transform: rotate(133.2deg);
+  -o-transform: rotate(133.2deg); }
+.percentageProgress[data-progress-percent="74"] .fill.fix {
+  transform: rotate(266.4deg);
+  -webkit-transform: rotate(266.4deg);
+  -moz-transform: rotate(266.4deg);
+  -o-transform: rotate(266.4deg); }
+
+.percentageProgress[data-progress-percent="75"] .mask.full, .percentageProgress[data-progress-percent="75"] .fill {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+  -moz-transform: rotate(135deg);
+  -o-transform: rotate(135deg); }
+.percentageProgress[data-progress-percent="75"] .fill.fix {
+  transform: rotate(270deg);
+  -webkit-transform: rotate(270deg);
+  -moz-transform: rotate(270deg);
+  -o-transform: rotate(270deg); }
+
+.percentageProgress[data-progress-percent="76"] .mask.full, .percentageProgress[data-progress-percent="76"] .fill {
+  transform: rotate(136.8deg);
+  -webkit-transform: rotate(136.8deg);
+  -moz-transform: rotate(136.8deg);
+  -o-transform: rotate(136.8deg); }
+.percentageProgress[data-progress-percent="76"] .fill.fix {
+  transform: rotate(273.6deg);
+  -webkit-transform: rotate(273.6deg);
+  -moz-transform: rotate(273.6deg);
+  -o-transform: rotate(273.6deg); }
+
+.percentageProgress[data-progress-percent="77"] .mask.full, .percentageProgress[data-progress-percent="77"] .fill {
+  transform: rotate(138.6deg);
+  -webkit-transform: rotate(138.6deg);
+  -moz-transform: rotate(138.6deg);
+  -o-transform: rotate(138.6deg); }
+.percentageProgress[data-progress-percent="77"] .fill.fix {
+  transform: rotate(277.2deg);
+  -webkit-transform: rotate(277.2deg);
+  -moz-transform: rotate(277.2deg);
+  -o-transform: rotate(277.2deg); }
+
+.percentageProgress[data-progress-percent="78"] .mask.full, .percentageProgress[data-progress-percent="78"] .fill {
+  transform: rotate(140.4deg);
+  -webkit-transform: rotate(140.4deg);
+  -moz-transform: rotate(140.4deg);
+  -o-transform: rotate(140.4deg); }
+.percentageProgress[data-progress-percent="78"] .fill.fix {
+  transform: rotate(280.8deg);
+  -webkit-transform: rotate(280.8deg);
+  -moz-transform: rotate(280.8deg);
+  -o-transform: rotate(280.8deg); }
+
+.percentageProgress[data-progress-percent="79"] .mask.full, .percentageProgress[data-progress-percent="79"] .fill {
+  transform: rotate(142.2deg);
+  -webkit-transform: rotate(142.2deg);
+  -moz-transform: rotate(142.2deg);
+  -o-transform: rotate(142.2deg); }
+.percentageProgress[data-progress-percent="79"] .fill.fix {
+  transform: rotate(284.4deg);
+  -webkit-transform: rotate(284.4deg);
+  -moz-transform: rotate(284.4deg);
+  -o-transform: rotate(284.4deg); }
+
+.percentageProgress[data-progress-percent="80"] .mask.full, .percentageProgress[data-progress-percent="80"] .fill {
+  transform: rotate(144deg);
+  -webkit-transform: rotate(144deg);
+  -moz-transform: rotate(144deg);
+  -o-transform: rotate(144deg); }
+.percentageProgress[data-progress-percent="80"] .fill.fix {
+  transform: rotate(288deg);
+  -webkit-transform: rotate(288deg);
+  -moz-transform: rotate(288deg);
+  -o-transform: rotate(288deg); }
+
+.percentageProgress[data-progress-percent="81"] .mask.full, .percentageProgress[data-progress-percent="81"] .fill {
+  transform: rotate(145.8deg);
+  -webkit-transform: rotate(145.8deg);
+  -moz-transform: rotate(145.8deg);
+  -o-transform: rotate(145.8deg); }
+.percentageProgress[data-progress-percent="81"] .fill.fix {
+  transform: rotate(291.6deg);
+  -webkit-transform: rotate(291.6deg);
+  -moz-transform: rotate(291.6deg);
+  -o-transform: rotate(291.6deg); }
+
+.percentageProgress[data-progress-percent="82"] .mask.full, .percentageProgress[data-progress-percent="82"] .fill {
+  transform: rotate(147.6deg);
+  -webkit-transform: rotate(147.6deg);
+  -moz-transform: rotate(147.6deg);
+  -o-transform: rotate(147.6deg); }
+.percentageProgress[data-progress-percent="82"] .fill.fix {
+  transform: rotate(295.2deg);
+  -webkit-transform: rotate(295.2deg);
+  -moz-transform: rotate(295.2deg);
+  -o-transform: rotate(295.2deg); }
+
+.percentageProgress[data-progress-percent="83"] .mask.full, .percentageProgress[data-progress-percent="83"] .fill {
+  transform: rotate(149.4deg);
+  -webkit-transform: rotate(149.4deg);
+  -moz-transform: rotate(149.4deg);
+  -o-transform: rotate(149.4deg); }
+.percentageProgress[data-progress-percent="83"] .fill.fix {
+  transform: rotate(298.8deg);
+  -webkit-transform: rotate(298.8deg);
+  -moz-transform: rotate(298.8deg);
+  -o-transform: rotate(298.8deg); }
+
+.percentageProgress[data-progress-percent="84"] .mask.full, .percentageProgress[data-progress-percent="84"] .fill {
+  transform: rotate(151.2deg);
+  -webkit-transform: rotate(151.2deg);
+  -moz-transform: rotate(151.2deg);
+  -o-transform: rotate(151.2deg); }
+.percentageProgress[data-progress-percent="84"] .fill.fix {
+  transform: rotate(302.4deg);
+  -webkit-transform: rotate(302.4deg);
+  -moz-transform: rotate(302.4deg);
+  -o-transform: rotate(302.4deg); }
+
+.percentageProgress[data-progress-percent="85"] .mask.full, .percentageProgress[data-progress-percent="85"] .fill {
+  transform: rotate(153deg);
+  -webkit-transform: rotate(153deg);
+  -moz-transform: rotate(153deg);
+  -o-transform: rotate(153deg); }
+.percentageProgress[data-progress-percent="85"] .fill.fix {
+  transform: rotate(306deg);
+  -webkit-transform: rotate(306deg);
+  -moz-transform: rotate(306deg);
+  -o-transform: rotate(306deg); }
+
+.percentageProgress[data-progress-percent="86"] .mask.full, .percentageProgress[data-progress-percent="86"] .fill {
+  transform: rotate(154.8deg);
+  -webkit-transform: rotate(154.8deg);
+  -moz-transform: rotate(154.8deg);
+  -o-transform: rotate(154.8deg); }
+.percentageProgress[data-progress-percent="86"] .fill.fix {
+  transform: rotate(309.6deg);
+  -webkit-transform: rotate(309.6deg);
+  -moz-transform: rotate(309.6deg);
+  -o-transform: rotate(309.6deg); }
+
+.percentageProgress[data-progress-percent="87"] .mask.full, .percentageProgress[data-progress-percent="87"] .fill {
+  transform: rotate(156.6deg);
+  -webkit-transform: rotate(156.6deg);
+  -moz-transform: rotate(156.6deg);
+  -o-transform: rotate(156.6deg); }
+.percentageProgress[data-progress-percent="87"] .fill.fix {
+  transform: rotate(313.2deg);
+  -webkit-transform: rotate(313.2deg);
+  -moz-transform: rotate(313.2deg);
+  -o-transform: rotate(313.2deg); }
+
+.percentageProgress[data-progress-percent="88"] .mask.full, .percentageProgress[data-progress-percent="88"] .fill {
+  transform: rotate(158.4deg);
+  -webkit-transform: rotate(158.4deg);
+  -moz-transform: rotate(158.4deg);
+  -o-transform: rotate(158.4deg); }
+.percentageProgress[data-progress-percent="88"] .fill.fix {
+  transform: rotate(316.8deg);
+  -webkit-transform: rotate(316.8deg);
+  -moz-transform: rotate(316.8deg);
+  -o-transform: rotate(316.8deg); }
+
+.percentageProgress[data-progress-percent="89"] .mask.full, .percentageProgress[data-progress-percent="89"] .fill {
+  transform: rotate(160.2deg);
+  -webkit-transform: rotate(160.2deg);
+  -moz-transform: rotate(160.2deg);
+  -o-transform: rotate(160.2deg); }
+.percentageProgress[data-progress-percent="89"] .fill.fix {
+  transform: rotate(320.4deg);
+  -webkit-transform: rotate(320.4deg);
+  -moz-transform: rotate(320.4deg);
+  -o-transform: rotate(320.4deg); }
+
+.percentageProgress[data-progress-percent="90"] .mask.full, .percentageProgress[data-progress-percent="90"] .fill {
+  transform: rotate(162deg);
+  -webkit-transform: rotate(162deg);
+  -moz-transform: rotate(162deg);
+  -o-transform: rotate(162deg); }
+.percentageProgress[data-progress-percent="90"] .fill.fix {
+  transform: rotate(324deg);
+  -webkit-transform: rotate(324deg);
+  -moz-transform: rotate(324deg);
+  -o-transform: rotate(324deg); }
+
+.percentageProgress[data-progress-percent="91"] .mask.full, .percentageProgress[data-progress-percent="91"] .fill {
+  transform: rotate(163.8deg);
+  -webkit-transform: rotate(163.8deg);
+  -moz-transform: rotate(163.8deg);
+  -o-transform: rotate(163.8deg); }
+.percentageProgress[data-progress-percent="91"] .fill.fix {
+  transform: rotate(327.6deg);
+  -webkit-transform: rotate(327.6deg);
+  -moz-transform: rotate(327.6deg);
+  -o-transform: rotate(327.6deg); }
+
+.percentageProgress[data-progress-percent="92"] .mask.full, .percentageProgress[data-progress-percent="92"] .fill {
+  transform: rotate(165.6deg);
+  -webkit-transform: rotate(165.6deg);
+  -moz-transform: rotate(165.6deg);
+  -o-transform: rotate(165.6deg); }
+.percentageProgress[data-progress-percent="92"] .fill.fix {
+  transform: rotate(331.2deg);
+  -webkit-transform: rotate(331.2deg);
+  -moz-transform: rotate(331.2deg);
+  -o-transform: rotate(331.2deg); }
+
+.percentageProgress[data-progress-percent="93"] .mask.full, .percentageProgress[data-progress-percent="93"] .fill {
+  transform: rotate(167.4deg);
+  -webkit-transform: rotate(167.4deg);
+  -moz-transform: rotate(167.4deg);
+  -o-transform: rotate(167.4deg); }
+.percentageProgress[data-progress-percent="93"] .fill.fix {
+  transform: rotate(334.8deg);
+  -webkit-transform: rotate(334.8deg);
+  -moz-transform: rotate(334.8deg);
+  -o-transform: rotate(334.8deg); }
+
+.percentageProgress[data-progress-percent="94"] .mask.full, .percentageProgress[data-progress-percent="94"] .fill {
+  transform: rotate(169.2deg);
+  -webkit-transform: rotate(169.2deg);
+  -moz-transform: rotate(169.2deg);
+  -o-transform: rotate(169.2deg); }
+.percentageProgress[data-progress-percent="94"] .fill.fix {
+  transform: rotate(338.4deg);
+  -webkit-transform: rotate(338.4deg);
+  -moz-transform: rotate(338.4deg);
+  -o-transform: rotate(338.4deg); }
+
+.percentageProgress[data-progress-percent="95"] .mask.full, .percentageProgress[data-progress-percent="95"] .fill {
+  transform: rotate(171deg);
+  -webkit-transform: rotate(171deg);
+  -moz-transform: rotate(171deg);
+  -o-transform: rotate(171deg); }
+.percentageProgress[data-progress-percent="95"] .fill.fix {
+  transform: rotate(342deg);
+  -webkit-transform: rotate(342deg);
+  -moz-transform: rotate(342deg);
+  -o-transform: rotate(342deg); }
+
+.percentageProgress[data-progress-percent="96"] .mask.full, .percentageProgress[data-progress-percent="96"] .fill {
+  transform: rotate(172.8deg);
+  -webkit-transform: rotate(172.8deg);
+  -moz-transform: rotate(172.8deg);
+  -o-transform: rotate(172.8deg); }
+.percentageProgress[data-progress-percent="96"] .fill.fix {
+  transform: rotate(345.6deg);
+  -webkit-transform: rotate(345.6deg);
+  -moz-transform: rotate(345.6deg);
+  -o-transform: rotate(345.6deg); }
+
+.percentageProgress[data-progress-percent="97"] .mask.full, .percentageProgress[data-progress-percent="97"] .fill {
+  transform: rotate(174.6deg);
+  -webkit-transform: rotate(174.6deg);
+  -moz-transform: rotate(174.6deg);
+  -o-transform: rotate(174.6deg); }
+.percentageProgress[data-progress-percent="97"] .fill.fix {
+  transform: rotate(349.2deg);
+  -webkit-transform: rotate(349.2deg);
+  -moz-transform: rotate(349.2deg);
+  -o-transform: rotate(349.2deg); }
+
+.percentageProgress[data-progress-percent="98"] .mask.full, .percentageProgress[data-progress-percent="98"] .fill {
+  transform: rotate(176.4deg);
+  -webkit-transform: rotate(176.4deg);
+  -moz-transform: rotate(176.4deg);
+  -o-transform: rotate(176.4deg); }
+.percentageProgress[data-progress-percent="98"] .fill.fix {
+  transform: rotate(352.8deg);
+  -webkit-transform: rotate(352.8deg);
+  -moz-transform: rotate(352.8deg);
+  -o-transform: rotate(352.8deg); }
+
+.percentageProgress[data-progress-percent="99"] .mask.full, .percentageProgress[data-progress-percent="99"] .fill {
+  transform: rotate(178.2deg);
+  -webkit-transform: rotate(178.2deg);
+  -moz-transform: rotate(178.2deg);
+  -o-transform: rotate(178.2deg); }
+.percentageProgress[data-progress-percent="99"] .fill.fix {
+  transform: rotate(356.4deg);
+  -webkit-transform: rotate(356.4deg);
+  -moz-transform: rotate(356.4deg);
+  -o-transform: rotate(356.4deg); }
+
+.percentageProgress[data-progress-percent="100"] .mask.full, .percentageProgress[data-progress-percent="100"] .fill {
+  transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -o-transform: rotate(180deg); }
+.percentageProgress[data-progress-percent="100"] .fill.fix {
+  transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -o-transform: rotate(360deg); }
+
+#halfScreen {
+  background: url("../assets/img/aboutCollage/Screenshot.png") fixed top center;
+  background-size: cover;
+  height: 100vh;
+  position: relative; }
+  #halfScreen h1 {
+    font-size: 104px; }
+  #halfScreen p.lead {
+    font-size: 24px; }
+  #halfScreen .about {
+    position: absolute;
+    bottom: 15%;
+    padding: 1px; }
+
+#collage {
+  margin-top: 5vh;
+  width: 100%;
+  position: relative; }
+  #collage .short_picture {
+    position: relative;
+    top: 40px; }
+  #collage .foregroundCollage {
+    position: absolute;
+    top: 4vh;
+    left: 0;
+    width: 100%; }
+    #collage .foregroundCollage .collageRow {
+      width: 100%;
+      padding-left: 5%;
+      margin: 0 auto; }
+      #collage .foregroundCollage .collageRow::after {
+        content: "";
+        clear: both; }
+      #collage .foregroundCollage .collageRow .collageColumn {
+        width: 13%;
+        float: left;
+        padding: 2%;
+        padding-top: 0; }
+        #collage .foregroundCollage .collageRow .collageColumn img {
+          width: 100%; }
+  #collage .backgroundCollage {
+    width: 100%; }
+    #collage .backgroundCollage .collageRow {
+      width: 100%;
+      text-align: center; }
+      #collage .backgroundCollage .collageRow .collageColumn {
+        display: inline-block;
+        width: 10%;
+        opacity: 0.75;
+        filter: blur(2px);
+        padding-left: 0.5%;
+        padding-right: 0.5%;
+        float: left;
+        position: relative; }
+        #collage .backgroundCollage .collageRow .collageColumn:first-of-type, #collage .backgroundCollage .collageRow .collageColumn:last-of-type {
+          top: 8vh; }
+        #collage .backgroundCollage .collageRow .collageColumn img {
+          width: 100%; }
+      #collage .backgroundCollage .collageRow:not(:first-of-type) .collageColumn {
+        top: 16vh; }
+        #collage .backgroundCollage .collageRow:not(:first-of-type) .collageColumn:first-of-type {
+          top: 9vh; }
+        #collage .backgroundCollage .collageRow:not(:first-of-type) .collageColumn:last-of-type {
+          top: 9vh; }
+      #collage .backgroundCollage .collageRow::after {
+        content: "";
+        clear: both; }
+
+.toppadding {
+  padding: 40px 15px;
+  background-color: #E9E9E9;
+  min-height: 100vh;
+  z-index: 70;
+  position: relative; }
+
+.memberPhoto {
+  width: 100%; }
+
+/*# sourceMappingURL=styles.css.map */

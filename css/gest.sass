@@ -1,0 +1,60 @@
+@import plugin
+$circleColor: "transparent"
+$circleBackground: #97a71d
+$circleSize: 140px
+$carouselControlSize: 100px
+$carouselControlColor: #fbfbfb
+$base: 1
+$incrementBy: 1
+$maxValue: 100
+$unitPercent: 180deg / 100
+$fontSize: 20px
+$fontWidth: 80px
+
+.radialProgress
+  background-color: $circleColor
+  height: $circleSize
+  width: $circleSize
+  border-radius: 50%
+  text-align: center
+  margin: 20vh auto
+  p
+    margin: 0 auto
+    position: relative
+    top: ($circleSize - $fontSize) / 2
+    color: $circleBackground
+    font-family: "Montserrat", sans-serif
+    font-size: $fontSize
+    z-index: 20
+
+  #carouselControl
+    background-color: $carouselControlColor
+    width: $carouselControlSize
+    height: $carouselControlSize
+    border-radius: 50%
+    position: absolute
+    z-index: 5
+    margin-left: ($circleSize - $carouselControlSize) / 2
+    margin-top: ($circleSize - $carouselControlSize) / 2
+    box-shadow: 6px 6px 10px rgba(0,0,0,0.2)
+  .circle
+    .fill, .mask
+      height: $circleSize
+      width: $circleSize
+      position: absolute
+      border-radius: 50%
+      -webkit-backface-visibility: hidden
+      transition: 1s
+      -webkit-transition: 1s
+    .mask
+      clip: rect(0px, $circleSize, $circleSize, $circleSize/2)
+      .fill
+        clip: rect(0px, $circleSize/2, $circleSize, 0px)
+        background-color: $circleBackground
+@for $var from  $base through $maxValue
+  .progressPercent-#{$var}, .radialProgress[dataProgressPercent="#{$var}"]
+    .circle
+      .mask.full, .fill
+        +transform(rotate($unitPercent * $var))
+      .fill.fix
+        +transform(rotate($unitPercent * ($var * 2)))
