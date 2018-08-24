@@ -78,28 +78,30 @@
             </div>
         </div>
         <div class="fullWidth toppadding">
-            <h1 class="monster LX capitalize text-center">We're Growing Our Connections</h1>
-            <p class="subtext monster text-center">Over the past years we've met different people and people have met us too so</p>
-            <div class="row">
-                <div class="col-md-3">
-                    <img src="assets/img/members/meliodas.png" alt="Meliodas" class="memberPhoto">
-                    <p class="memberName">Meliodas</p>
-                    <p class="memberPosition">Leader/Co-Founder</p>
-                </div>
-                <div class="col-md-3">
-                    <img src="assets/img/members/Itachi.png" alt="Itachi" class="memberPhoto">
-                    <p class="memberName">Itachi Uchiha</p>
-                    <p class="memberPosition">Co-Founder/CEO</p>
-                </div>
-                <div class="col-md-3">
-                    <img src="assets/img/members/Saitama_serious_profile.png" alt="Saitama" class="memberPhoto">
-                    <p class="memberName">Saitama</p>
-                    <p class="memberPosition">PROVOST</p>
-                </div>
-                <div class="col-md-3">
-                    <img src="assets/img/members/misakimei.jpg" alt="Misaki" class="memberPhoto">
-                    <p class="memberName">Misaki Mei</p>
-                    <p class="memberPosition">Chief Tailor</p>
+            <div class="container">
+                <h1 class="monster LX capitalize text-center">Meet Our Amazing Team</h1>
+                <p class="subtext monster text-center">Over the past years we've met different people and people have met us too so</p>
+                <div class="row marginTop XL">
+                    <div class="col-md-3">
+                        <img src="assets/img/members/member3.jpg" alt="Meliodas" class="memberPhoto">
+                        <p class="memberName">Akane Tendo</p>
+                        <p class="memberPosition">Leader/Co-Founder</p>
+                    </div>
+                    <div class="col-md-3">
+                        <img src="assets/img/members/member6.jpg" alt="Itachi" class="memberPhoto">
+                        <p class="memberName">Misaki Mei</p>
+                        <p class="memberPosition">Co-Founder/CEO</p>
+                    </div>
+                    <div class="col-md-3">
+                        <img src="assets/img/members/member2.jpg" alt="Saitama" class="memberPhoto">
+                        <p class="memberName">Meliodas</p>
+                        <p class="memberPosition">PROVOST</p>
+                    </div>
+                    <div class="col-md-3">
+                        <img src="assets/img/members/member1.jpg" alt="Misaki" class="memberPhoto">
+                        <p class="memberName">Saitama</p>
+                        <p class="memberPosition">Chief Tailor</p>
+                    </div>
                 </div>
             </div>
         </div>
