@@ -11,8 +11,8 @@
         <li class="selected"><a href="index.php">Home</a></li>
         <li><a href="about.php">About</a></li>
         <li><a href="#">Gallery</a></li>
-        <li><a href="#">Store</a></li>
-        <li><a href="#">News</a></li>
-        <li><a href="#">Contact</a></li>
+        <!--<li><a href="#">Store</a></li>--
+        <li><a href="#">News</a></li>-->
+        <li><a href="contact.php">Contact</a></li>
     </ul>
 </div>

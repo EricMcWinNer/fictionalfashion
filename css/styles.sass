@@ -630,7 +630,7 @@ canvas#sewed_triangle
   &::after
     content: ''
     position: absolute
-    background-color: rgba(0,0,0,0.9)
+    background-color: rgba(0, 0, 0, 0.9)
     width: 100%
     height: 100%
     z-index: 4
@@ -719,6 +719,7 @@ canvas#sewed_triangle
           +transition(1s)
           &:hover
             color: white
+
 #linkList
   padding-top: 30px
   padding-bottom: 30px
@@ -736,6 +737,7 @@ canvas#sewed_triangle
       a
         color: #333
         font-size: 16px
+
 #copyRight
   background-color: lightgray
   padding: 20px
@@ -743,6 +745,7 @@ canvas#sewed_triangle
     font-size: 14px
     a
       color: #6F2BCD
+
 @for $var from 1 through 100
   .percentageProgress[data-progress-percent="#{$var}"]
     .mask.full, .fill
@@ -750,11 +753,20 @@ canvas#sewed_triangle
     .fill.fix
       +transform(rotate($onePercent * ($var * 2)))
 
-
-
-
 //About Page Individual Code
 #halfScreen
+  &.contactScreen
+    background-image: url("../assets/img/aboutCollage/3.jpg")
+    z-index: 3
+    &::after
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      background-color: rgba(0, 0, 0, 0.45)
+      z-index: -1
   @extend #fullScreen
   background: url("../assets/img/aboutCollage/Screenshot.png") fixed top center
   background-size: cover
@@ -768,6 +780,7 @@ canvas#sewed_triangle
     position: absolute
     bottom: 15%
     padding: 1px
+
 #collage
   margin-top: 5vh
   width: 100%
@@ -822,18 +835,164 @@ canvas#sewed_triangle
       &::after
         content: ''
         clear: both
+
 .toppadding
   padding: 40px 15px
   background-color: #fafafa
   min-height: 100vh
   z-index: 70
   position: relative
+
 .memberPhoto
   width: 100%
+
 p.memberName
   font-size: 24px
   margin-top: 20px
   font-weight: bold
+
 p.memberPosition
   font-size: 19px
   color: #888888
+
+.imgContainer
+  position: relative
+  width: 100%
+  +transition(1s)
+  &:hover
+    border-radius: 6px
+    .overLay
+      opacity: 1
+      border-radius: 6px
+
+.overLay
+  ul
+    list-style: none
+    margin: 0
+    padding: 0
+    li
+      margin: 0 6px
+      padding: 0
+      display: inline-block
+
+  position: absolute
+  top: 0
+  left: 0
+  opacity: 0
+  +transition(1s)
+  width: 100%
+  height: 100%
+  z-index: 92
+  background-color: rgba(172, 19, 234, 0.7)
+  display: flex
+  align-items: center
+  justify-content: center
+  a
+    color: white
+    font-size: 16px
+
+.backgroundDiv
+  +transition(.3s)
+  &.left
+    background: url("../assets/img/tests/test10.jpg") no-repeat 0 0
+    background-size: cover
+    +transition(.3s)
+    &.fixedBackground
+      z-index: -19
+      +transition(.3s)
+  &.right
+    background: url("../assets/img/tests/test22.jpg") no-repeat 0 0
+    background-size: cover
+    +transition(.3s)
+    &.fixedBackground
+      z-index: -10
+      +transition(.3s)
+  &.fixedBackground
+    background-attachment: fixed
+    position: relative
+    background-position: 0 center
+
+#contactMap
+  height: 300px
+  +transition(1.5s)
+  &:not(.mobile):hover
+    height: 450px !important
+
+.leftRight
+  width: 100%
+  text-align: center
+  span
+    background-color: rgb(172, 19, 234)
+    display: inline-flex
+    margin: 15px auto 30px
+    height: 80px
+    width: 80px
+    align-items: center
+    justify-content: center
+    +transform(rotate(45deg))
+    +transition(.4s)
+    &:hover
+      +transform(rotate(0deg))
+      i
+        +transform(rotate(0deg))
+
+  i
+    margin: 10px auto
+    color: white
+    font-size: 22px
+    +transform(rotate(-45deg))
+    +transition(.4s)
+
+.contactText
+  font:
+    size: 18px
+    family: "Poppins", sans-serif
+  letter-spacing: 1.5px
+  text-align: center
+
+.subText
+  font:
+    size: 15px
+    family: "Poppins", sans-serif
+  letter-spacing: 1.5px
+  margin-top: 5px
+  color: #777
+  text-align: center
+
+.contactCol
+  &:hover
+    div.leftRight
+      span
+        +transform(rotate(0deg))
+        i
+          +transform(rotate(0deg))
+#contactForm
+  input, textarea
+    width: 100%
+    border: 1px solid #ddd
+    font-family: "Poppins", sans-serif
+    padding: 8px 15px
+  div.fullWidth
+    width: 45%
+    display: inline-block
+    margin-bottom: 20px
+    &.textarea
+      width: 98.5%
+    &:nth-child(odd)
+      margin:
+        left: 0
+        right: 4%
+    &:nth-child(even)
+      margin:
+        left: 4%
+        right: 0
+  button[type="submit"]
+    background-color: rgb(172, 19, 234)
+    color: white
+    font-family: "Poppins", sans-serif
+    border: none
+    padding: 15px
+    font:
+      weight: bold
+      size: 15px
+

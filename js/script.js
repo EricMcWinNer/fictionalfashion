@@ -10,56 +10,56 @@ function ericSweetView(selector) {
     selector.find('.ericItem .clickEvent').click(function () {
             if ($(this).parents('.ericItem').hasClass('right')) {
                 var rightIndex = $(this).parents('.ericItem').index();
-                    if(rightFlag){
-                        rightFlag = false;
-                        selector.find('.ericItem').each(function () {
-                            if (!$(this).hasClass('selected') && !$(this).hasClass('left') && !$(this).hasClass('right'))
-                                $(this).removeClass('fromRight').addClass('fromLeft');
-                        });
-                        if (rightIndex === 0) {
-                            selector.find('.ericItem').eq(number - 1).addClass('fromLeft').removeClass('left rotate');
-                            selector.find('.ericItem').eq(number).addClass('toLeftFromSelected');
-                            setTimeout(function () {
-                                selector.find('.ericItem').eq(number - 1).hide();
-                            }, 900);
-                            setTimeout(function () {
-                                selector.find('.ericItem').eq(number).addClass('left').removeClass('selected toLeftFromSelected').addClass('rotate');
-                            }, 900);
-                        }
-                        else if (rightIndex === 1) {
-                            selector.find('.ericItem').eq(number).addClass('fromLeft').removeClass('left rotate');
-                            selector.find('.ericItem').eq(rightIndex - 1).addClass('toLeftFromSelected');
-                            setTimeout(function () {
-                                selector.find('.ericItem').eq(number).hide();
-                            }, 900);
-                            setTimeout(function () {
-                                selector.find('.ericItem').eq(rightIndex - 1).addClass('left').removeClass('selected toLeftFromSelected').addClass('rotate');
-                            }, 900);
-                        }
-                        else {
-                            selector.find('.ericItem').eq(rightIndex - 2).addClass('fromLeft').removeClass('left rotate');
-                            selector.find('.ericItem').eq(rightIndex - 1).addClass('toLeftFromSelected');
-                            setTimeout(function () {
-                                selector.find('.ericItem').eq(rightIndex - 2).hide();
-                            }, 900);
-                            setTimeout(function () {
-                                selector.find('.ericItem').eq(rightIndex - 1).addClass('left').removeClass('selected toLeftFromSelected').addClass('rotate');
-                            }, 900);
-                        }
-                        selector.find('.ericItem').eq(rightIndex).addClass('toSelectedFromRight').removeClass('right rotate');
-                        selector.find('.ericItem').eq(rightIndex === number ? 0 : rightIndex + 1).show().removeClass('fromLeft rotate').addClass('right rotate');
+                if (rightFlag) {
+                    rightFlag = false;
+                    selector.find('.ericItem').each(function () {
+                        if (!$(this).hasClass('selected') && !$(this).hasClass('left') && !$(this).hasClass('right'))
+                            $(this).removeClass('fromRight').addClass('fromLeft');
+                    });
+                    if (rightIndex === 0) {
+                        selector.find('.ericItem').eq(number - 1).addClass('fromLeft').removeClass('left rotate');
+                        selector.find('.ericItem').eq(number).addClass('toLeftFromSelected');
                         setTimeout(function () {
-                            selector.find('.ericItem').eq(rightIndex).addClass('selected').removeClass('right toSelectedFromRight');
-                            rightFlag = true;
+                            selector.find('.ericItem').eq(number - 1).hide();
+                        }, 900);
+                        setTimeout(function () {
+                            selector.find('.ericItem').eq(number).addClass('left').removeClass('selected toLeftFromSelected').addClass('rotate');
                         }, 900);
                     }
-                    else{
-                        //Do nothing!
+                    else if (rightIndex === 1) {
+                        selector.find('.ericItem').eq(number).addClass('fromLeft').removeClass('left rotate');
+                        selector.find('.ericItem').eq(rightIndex - 1).addClass('toLeftFromSelected');
+                        setTimeout(function () {
+                            selector.find('.ericItem').eq(number).hide();
+                        }, 900);
+                        setTimeout(function () {
+                            selector.find('.ericItem').eq(rightIndex - 1).addClass('left').removeClass('selected toLeftFromSelected').addClass('rotate');
+                        }, 900);
                     }
+                    else {
+                        selector.find('.ericItem').eq(rightIndex - 2).addClass('fromLeft').removeClass('left rotate');
+                        selector.find('.ericItem').eq(rightIndex - 1).addClass('toLeftFromSelected');
+                        setTimeout(function () {
+                            selector.find('.ericItem').eq(rightIndex - 2).hide();
+                        }, 900);
+                        setTimeout(function () {
+                            selector.find('.ericItem').eq(rightIndex - 1).addClass('left').removeClass('selected toLeftFromSelected').addClass('rotate');
+                        }, 900);
+                    }
+                    selector.find('.ericItem').eq(rightIndex).addClass('toSelectedFromRight').removeClass('right rotate');
+                    selector.find('.ericItem').eq(rightIndex === number ? 0 : rightIndex + 1).show().removeClass('fromLeft rotate').addClass('right rotate');
+                    setTimeout(function () {
+                        selector.find('.ericItem').eq(rightIndex).addClass('selected').removeClass('right toSelectedFromRight');
+                        rightFlag = true;
+                    }, 900);
+                }
+                else {
+                    //Do nothing!
+                }
             }
             else {
                 var leftIndex = $(this).parents('.ericItem').index();
-                if(leftFlag){
+                if (leftFlag) {
                     leftFlag = false;
                     selector.find('.ericItem').each(function () {
                         if (!$(this).hasClass('selected') && !$(this).hasClass('left') && !$(this).hasClass('right'))
@@ -92,7 +92,7 @@ function ericSweetView(selector) {
                         leftFlag = true;
                     }, 900);
                 }
-                else{
+                else {
                     //Do nothing!
                 }
             }
@@ -106,7 +106,7 @@ function ericCarousel(selector) {
         var imageRegex = 'url(';
         var gradientRegex = 'linear-gradient(';
         if (background === '' || background === null || background === undefined) {
-            return;
+
         }
         else {
             if (background.indexOf(imageRegex) !== -1) {
@@ -368,7 +368,7 @@ function ericCarousel(selector) {
         },
         skipTo: function (indexToSkipTo) {
             if (indexToSkipTo > number || indexToSkipTo < 0) {
-                return;
+
             }
             else {
                 intervalManager("stop");
@@ -415,6 +415,11 @@ function backgroundPicture() {
 }
 
 $(document).ready(function () {
+    if($('.backgroundDiv').length)
+    {
+        $('.backgroundDiv.left').outerHeight($('.contentDiv.left').get(0).scrollHeight);
+        $('.backgroundDiv.right').outerHeight($('.contentDiv.right').get(0).scrollHeight);
+    }
     $('#image_behind_triangle, #image_behind_triangle img, #sewed_triangle').hide();
     var bannerWidth = $('.positioned').outerWidth();
     var aboutWidth = $('.about').outerWidth();
@@ -427,7 +432,7 @@ $(document).ready(function () {
         'top': '-40px'
     });
     var canvasContainerPercent = Math.floor(canvasContainerWidth / 100);
-    if($('#sewed_triangle').length > 0){
+    if ($('#sewed_triangle').length > 0) {
         if ($('#sewed_triangle').get(0).getContext) {
             var sewed_triangle = $('#sewed_triangle').get(0).getContext('2d');
             sewed_triangle.lineWidth = 1;
@@ -447,12 +452,11 @@ $(document).ready(function () {
                 sewed_triangle.moveTo(ex, why);
                 sewed_triangle.stroke();
             }
-        }else{
+        } else {
             //Do Nothing
         }
     }
-    if($('#animatedLine').length > 0)
-    {
+    if ($('#animatedLine').length > 0) {
         if ($('#animatedLine').get(0).getContext) {
             var canvas = $('#animatedLine').get(0).getContext('2d');
             canvas.lineWidth = 2.5;
@@ -609,6 +613,16 @@ $(document).ready(function () {
 
     });
     $(window).scroll(function () {
+        if ($('.backgroundDiv').length) {
+            if ($(window).scrollTop() >= $('.backgroundDiv.left').offset().top - 80)
+                $('.backgroundDiv.left').addClass('fixedBackground');
+            else
+                $('.backgroundDiv.left').removeClass('fixedBackground');
+            if ($(window).scrollTop() >= $('.backgroundDiv.right').offset().top - 80)
+                $('.backgroundDiv.right').addClass('fixedBackground');
+            else
+                $('.backgroundDiv.right').removeClass('fixedBackground');
+        }
         var scrollTop = $(window).scrollTop();
         var navigationOffset = $('.navigation.largeView').length > 0 ? $('.navigation.largeView').offset().top : 0;
         var testOffset = $('.skewed .triangle.down-right').length > 0 ? $('.skewed .triangle.down-right').offset().top : 0;
@@ -616,7 +630,7 @@ $(document).ready(function () {
         var distance = navigationOffset - scrollTop;
         var fixed01Offset = $('#fixed01').length > 0 ? $('#fixed01').offset().top : 0;
         var fixed02Offset = $('#fixed02').length > 0 ? $('#fixed02').offset().top : 0;
-        var threeColumns1Offset = $('#collage').length > 0 ? $('#collage').offset().top  : 0;
+        var threeColumns1Offset = $('#collage').length > 0 ? $('#collage').offset().top : 0;
         var featuredProductsOffset = $('#featuredProducts').length > 0 ? $('#featuredProducts').offset().top : 0;
         if (scrollTop >= featuredProductsOffset) {
             $('.ericItem.left, .ericItem.right').addClass('rotate');
