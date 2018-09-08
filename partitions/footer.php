@@ -49,7 +49,7 @@
 </div>
 <div id="copyRight" class="fullWidth">
     <div class="container">
-        <p class="text-center">&copy; 2018 Fictional Fashion | Built by
+        <p class="text-center">&copy; 2018 Fictional Fashion | Built from scratch by
             <a target="_blank" href="http://www.ericmcwinner.com">Eric McWinNEr</a>.</p>
     </div>
 </div>

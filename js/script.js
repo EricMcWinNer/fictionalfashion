@@ -1,4 +1,31 @@
-function ericSweetView(selector) {
+//HAD TO COMMENT THE CODE BECAUSE I COMPLETELY FORGOT MY CODE
+var currentHeight;
+
+function arrangeItem ( selector, delay )
+{
+    selector.addClass('active').show();
+    var descriptiveText = selector.find('.descriptiveText');
+    var percent = descriptiveText.outerHeight() / 100;
+    //var height = descriptiveText.outerHeight() / 2;
+    descriptiveText.css({'bottom': (35 * percent)});
+    var width = descriptiveText.siblings('img.borderRadii').outerWidth();
+    descriptiveText.outerWidth(width);
+    var imageHeight = selector.find('.overlay').siblings('img.borderRadii').outerHeight();
+    var imageWidth = selector.find('.overlay').siblings('img.borderRadii').outerWidth();
+    var overlay = selector.find('.overlay');
+    overlay.outerHeight(imageHeight).outerWidth(imageWidth);
+    var paddingLeft = parseInt(overlay.parents('.image').css('padding-lef'), 10);
+    var percentWidth = overlay.parents('.image').outerWidth() / 100;
+    overlay.css('left', paddingLeft + (5 * percentWidth) - 1);
+    if (delay === undefined || delay === null)
+        selector.css({'opacity': 1});
+    else
+        selector.animate({'opacity': 1}, delay);
+}
+
+//Code that controls the carousel of shop items
+function ericSweetView ( selector )
+{
     var itemLength = selector.find('.ericItem').length;
     var number = itemLength - 1;
     selector.find('.ericItem').hide();
@@ -7,48 +34,57 @@ function ericSweetView(selector) {
     selector.find('.ericItem').eq(number).addClass('left').show();
     var rightFlag = true;
     var leftFlag = true;
-    selector.find('.ericItem .clickEvent').click(function () {
+    selector.find('.ericItem .clickEvent').click(function ()
+        {
             if ($(this).parents('.ericItem').hasClass('right')) {
                 var rightIndex = $(this).parents('.ericItem').index();
                 if (rightFlag) {
                     rightFlag = false;
-                    selector.find('.ericItem').each(function () {
+                    selector.find('.ericItem').each(function ()
+                    {
                         if (!$(this).hasClass('selected') && !$(this).hasClass('left') && !$(this).hasClass('right'))
                             $(this).removeClass('fromRight').addClass('fromLeft');
                     });
                     if (rightIndex === 0) {
                         selector.find('.ericItem').eq(number - 1).addClass('fromLeft').removeClass('left rotate');
                         selector.find('.ericItem').eq(number).addClass('toLeftFromSelected');
-                        setTimeout(function () {
+                        setTimeout(function ()
+                        {
                             selector.find('.ericItem').eq(number - 1).hide();
                         }, 900);
-                        setTimeout(function () {
+                        setTimeout(function ()
+                        {
                             selector.find('.ericItem').eq(number).addClass('left').removeClass('selected toLeftFromSelected').addClass('rotate');
                         }, 900);
                     }
                     else if (rightIndex === 1) {
                         selector.find('.ericItem').eq(number).addClass('fromLeft').removeClass('left rotate');
                         selector.find('.ericItem').eq(rightIndex - 1).addClass('toLeftFromSelected');
-                        setTimeout(function () {
+                        setTimeout(function ()
+                        {
                             selector.find('.ericItem').eq(number).hide();
                         }, 900);
-                        setTimeout(function () {
+                        setTimeout(function ()
+                        {
                             selector.find('.ericItem').eq(rightIndex - 1).addClass('left').removeClass('selected toLeftFromSelected').addClass('rotate');
                         }, 900);
                     }
                     else {
                         selector.find('.ericItem').eq(rightIndex - 2).addClass('fromLeft').removeClass('left rotate');
                         selector.find('.ericItem').eq(rightIndex - 1).addClass('toLeftFromSelected');
-                        setTimeout(function () {
+                        setTimeout(function ()
+                        {
                             selector.find('.ericItem').eq(rightIndex - 2).hide();
                         }, 900);
-                        setTimeout(function () {
+                        setTimeout(function ()
+                        {
                             selector.find('.ericItem').eq(rightIndex - 1).addClass('left').removeClass('selected toLeftFromSelected').addClass('rotate');
                         }, 900);
                     }
                     selector.find('.ericItem').eq(rightIndex).addClass('toSelectedFromRight').removeClass('right rotate');
                     selector.find('.ericItem').eq(rightIndex === number ? 0 : rightIndex + 1).show().removeClass('fromLeft rotate').addClass('right rotate');
-                    setTimeout(function () {
+                    setTimeout(function ()
+                    {
                         selector.find('.ericItem').eq(rightIndex).addClass('selected').removeClass('right toSelectedFromRight');
                         rightFlag = true;
                     }, 900);
@@ -61,33 +97,39 @@ function ericSweetView(selector) {
                 var leftIndex = $(this).parents('.ericItem').index();
                 if (leftFlag) {
                     leftFlag = false;
-                    selector.find('.ericItem').each(function () {
+                    selector.find('.ericItem').each(function ()
+                    {
                         if (!$(this).hasClass('selected') && !$(this).hasClass('left') && !$(this).hasClass('right'))
                             $(this).removeClass('fromLeft').addClass('fromRight');
                     });
                     if (leftIndex === number) {
                         selector.find('.ericItem').eq(1).addClass('fromRight').removeClass('right rotate');
                         selector.find('.ericItem').eq(0).addClass('toRightFromSelected');
-                        setTimeout(function () {
+                        setTimeout(function ()
+                        {
                             selector.find('.ericItem').eq(1).hide();
                         }, 900);
-                        setTimeout(function () {
+                        setTimeout(function ()
+                        {
                             selector.find('.ericItem').eq(0).addClass('right').removeClass('selected toRightFromSelected').addClass('rotate');
                         }, 900);
                     }
                     else {
                         selector.find('.ericItem').eq(leftIndex === number - 1 ? 0 : leftIndex + 2).addClass('fromRight').removeClass('right rotate');
                         selector.find('.ericItem').eq(leftIndex + 1).addClass('toRightFromSelected');
-                        setTimeout(function () {
+                        setTimeout(function ()
+                        {
                             selector.find('.ericItem').eq(leftIndex === number - 1 ? 0 : leftIndex + 2).hide();
                         }, 900);
-                        setTimeout(function () {
+                        setTimeout(function ()
+                        {
                             selector.find('.ericItem').eq(leftIndex + 1).addClass('right').removeClass('selected toRightFromSelected left').addClass('rotate');
                         }, 900);
                     }
                     selector.find('.ericItem').eq(leftIndex).addClass('toSelectedFromLeft').removeClass('left rotate');
                     selector.find('.ericItem').eq(leftIndex === 0 ? number : leftIndex - 1).show().removeClass('fromRight rotate right').addClass('left rotate');
-                    setTimeout(function () {
+                    setTimeout(function ()
+                    {
                         selector.find('.ericItem').eq(leftIndex).addClass('selected').removeClass('left toSelectedFromLeft');
                         leftFlag = true;
                     }, 900);
@@ -100,8 +142,11 @@ function ericSweetView(selector) {
     );
 }
 
-function ericCarousel(selector) {
-    selector.find('.ericItem').each(function () {
+
+function ericCarousel ( selector )
+{
+    selector.find('.ericItem').each(function ()
+    {
         var background = $(this).attr('data-eric-background');
         var imageRegex = 'url(';
         var gradientRegex = 'linear-gradient(';
@@ -148,7 +193,8 @@ function ericCarousel(selector) {
             break;
     }
     selector.find('.ericItem').css({'opacity': 0}).hide();
-    selector.find('.ericItem').eq(index).addClass('active').show().css({'opacity': 1});
+    selector.find('.ericItem').eq(index).addClass('active').show();
+    arrangeItem(selector.find('.ericItem').eq(index), delay);
     var number = selector.find('.ericItem').length - 1;
     var period = selector.attr('data-eric-period') || 5000;
     var originalPeriod;
@@ -183,7 +229,8 @@ function ericCarousel(selector) {
     var newStart;
     var carouselClass;
 
-    function carouselWorker() {
+    function carouselWorker ()
+    {
         if (newStart === "startOver" && beginAgain === false) {
             iterations = 0;
             currentPercent = 0;
@@ -208,7 +255,8 @@ function ericCarousel(selector) {
             if (index >= number) {
                 selector.find('.ericItem').eq(index).removeClass('active').css({'opacity': 0}).hide();
                 index = 0;
-                selector.find('.ericItem').eq(index).show().addClass('active').animate({'opacity': 1}, delay);
+                selector.find('.ericItem').eq(index).show().addClass('active');
+                arrangeItem(selector.find('.ericItem').eq(index), delay);
                 $('#carouselIndicator').find('.currentIndex').html(index + 1);
                 carouselClass = Math.floor(((Math.random() * 10) + 1) / 2);
                 changeClass(carouselClass);
@@ -216,7 +264,8 @@ function ericCarousel(selector) {
             else {
                 selector.find('.ericItem').eq(index).removeClass('active').css({'opacity': 0}).hide();
                 index += 1;
-                selector.find('.ericItem').eq(index).addClass('active').show().animate({'opacity': 1}, delay);
+                selector.find('.ericItem').eq(index).addClass('active').show();
+                arrangeItem(selector.find('.ericItem').eq(index), delay);
                 $('#carouselIndicator').find('.currentIndex').html(index + 1);
                 carouselClass = Math.floor(((Math.random() * 10)) / 2);
                 changeClass(carouselClass);
@@ -236,44 +285,52 @@ function ericCarousel(selector) {
 
     var interval = null;
 
-    function intervalManager(state, callback, duration, startOver) {
-        if (state === "play") {
-            if (startOver === "startOver") {
-                newStart = "startOver";
-                iterations = 0;
-                currentPercent = 0;
-                decrement = false;
-                interval = setInterval(callback, duration);
-            }
-            else {
-                interval = setInterval(callback, duration);
-            }
-        }
-        else if (state === "stop") {
-            clearInterval(interval);
-        }
-    }
-
-    function changeClass(classNumber) {
-        if (classNumber === 0) {
-            validateNextContent();
-            $('.nextContent').addClass('purple');
-        }
-        else if (classNumber === 1) {
-            validateNextContent();
-            $('.nextContent').addClass('yellow');
-        }
-        else if (classNumber === 2) {
-            validateNextContent();
-            $('.nextContent').addClass('blue');
-        }
-        else {
-            validateNextContent();
-            $('.nextContent').addClass('pink');
+    function intervalManager ( state, callback, duration, startOver )
+    {
+        switch (state) {
+            case "play":
+                if (startOver === "startOver") {
+                    newStart = "startOver";
+                    iterations = 0;
+                    currentPercent = 0;
+                    decrement = false;
+                    interval = setInterval(callback, duration);
+                }
+                else {
+                    interval = setInterval(callback, duration);
+                }
+                break;
+            default:
+                clearInterval(interval);
+                break;
         }
     }
 
-    function validateNextContent() {
+    function changeClass ( classNumber )
+    {
+        switch (classNumber)
+        {
+            case 0:
+                validateNextContent();
+                $('.nextContent').addClass('purple');
+                break;
+            case 1:
+                validateNextContent();
+                $('.nextContent').addClass('yellow');
+                break;
+            case 2:
+                validateNextContent();
+                $('.nextContent').addClass('blue');
+                break;
+            default:
+                validateNextContent();
+                $('.nextContent').addClass('pink');
+                break;
+        }
+    }
+
+    function validateNextContent ()
+    {
         if ($('.nextContent').hasClass('yellow'))
             $('.nextContent').removeClass('yellow');
         else if ($('.nextContent').hasClass('blue'))
@@ -288,14 +345,16 @@ function ericCarousel(selector) {
     intervalManager("play", carouselWorker, periodInterval);
     $('#carouselIndicator').find('.currentIndex').html(1);
     return {
-        nexxt: function () {
+        nexxt: function ()
+        {
             intervalManager('stop');
             $('.percentageProgress .mask, .percentageProgress .fill').addClass('retract').parents('.percentageProgress').attr('data-progress-percent', 0);
             $('.percentageProgress .mask, .percentageProgress .fill').removeClass('retract');
             if (index >= number) {
                 selector.find('.ericItem').eq(index).removeClass('active').css({'opacity': 0}).hide();
                 index = 0;
-                selector.find('.ericItem').eq(index).show().addClass('active').animate({'opacity': 1}, delay);
+                selector.find('.ericItem').eq(index).show().addClass('active');
+                arrangeItem(selector.find('.ericItem').eq(index), delay);
                 carouselClass = Math.floor(((Math.random() * 10)) / 2);
                 changeClass(carouselClass);
                 intervalManager("play", carouselWorker, periodInterval, "startOver");
@@ -304,7 +363,8 @@ function ericCarousel(selector) {
             else {
                 selector.find('.ericItem').eq(index).removeClass('active').css({'opacity': 0}).hide();
                 index += 1;
-                selector.find('.ericItem').eq(index).addClass('active').show().animate({'opacity': 1}, delay);
+                selector.find('.ericItem').eq(index).addClass('active').show();
+                arrangeItem(selector.find('.ericItem').eq(index), delay);
                 carouselClass = Math.floor(((Math.random() * 10)) / 2);
                 changeClass(carouselClass);
                 intervalManager("play", carouselWorker, periodInterval, "startOver");
@@ -321,14 +381,16 @@ function ericCarousel(selector) {
                 $('#carouselControl').addClass("right");
             }
         },
-        previous: function () {
+        previous: function ()
+        {
             intervalManager('stop');
             $('.percentageProgress .mask, .percentageProgress .fill').addClass('retract').parents('.percentageProgress').attr('data-progress-percent', 0);
             $('.percentageProgress .mask, .percentageProgress .fill').removeClass('retract');
             if (index === 0) {
                 selector.find('.ericItem').eq(index).removeClass('active').css({'opacity': 0}).hide();
                 index = number;
-                selector.find('.ericItem').eq(index).show().addClass('active').animate({'opacity': 1}, delay);
+                selector.find('.ericItem').eq(index).show().addClass('active');
+                arrangeItem(selector.find('.ericItem').eq(index), delay);
                 carouselClass = Math.floor(((Math.random() * 10)) / 2);
                 changeClass(carouselClass);
                 intervalManager("play", carouselWorker, periodInterval, "startOver");
@@ -337,8 +399,9 @@ function ericCarousel(selector) {
             else {
                 selector.find('.ericItem').eq(index).removeClass('active').css({'opacity': 0}).hide();
                 index -= 1;
-                selector.find('.ericItem').eq(index).addClass('active').show().animate({'opacity': 1}, delay);
+                selector.find('.ericItem').eq(index).addClass('active').show();
                 carouselClass = Math.floor(((Math.random() * 10)) / 2);
+                arrangeItem(selector.find('.ericItem').eq(index), delay);
                 changeClass(carouselClass);
                 intervalManager("play", carouselWorker, periodInterval, "startOver");
                 $('#carouselIndicator').find('.currentIndex').html(index + 1);
@@ -354,19 +417,24 @@ function ericCarousel(selector) {
                 $('#carouselControl').addClass("right");
             }
         },
-        pauuse: function () {
+        pauuse: function ()
+        {
             intervalManager('stop');
         },
-        resume: function () {
+        resume: function ()
+        {
             intervalManager("play", carouselWorker, periodInterval);
         },
-        restart: function () {
+        restart: function ()
+        {
             intervalManager("play", carouselWorker, periodInterval, "startOver");
         },
-        totalIndexes: function () {
+        totalIndexes: function ()
+        {
             return number + 1;
         },
-        skipTo: function (indexToSkipTo) {
+        skipTo: function ( indexToSkipTo )
+        {
             if (indexToSkipTo > number || indexToSkipTo < 0) {
 
             }
@@ -383,39 +451,42 @@ function ericCarousel(selector) {
     };
 }
 
-function backgroundPicture() {
-    $('body').find('.backgroundPicture').each(function () {
+function backgroundPicture ()
+{
+    $('body').find('.backgroundPicture').each(function ()
+    {
         var backgroundArray = $(this).attr('data-background-Picture').split(',');
         if (backgroundArray.length === 1) {
-            $(this).css({"background-image": backgroundArray[0]});
+            $(this).css({"background-image": backgroundArray[ 0 ]});
         }
         else if (backgroundArray.length === 2) {
-            $(this).css({"background-image": backgroundArray[0]});
-            $(this).css({"background-position": backgroundArray[1]});
+            $(this).css({"background-image": backgroundArray[ 0 ]});
+            $(this).css({"background-position": backgroundArray[ 1 ]});
         }
         else if (backgroundArray.length === 3) {
-            $(this).css({"background-image": backgroundArray[0]});
-            $(this).css({"background-position": backgroundArray[1]});
-            $(this).css({"background-attachment": backgroundArray[2]});
+            $(this).css({"background-image": backgroundArray[ 0 ]});
+            $(this).css({"background-position": backgroundArray[ 1 ]});
+            $(this).css({"background-attachment": backgroundArray[ 2 ]});
         }
         else if (backgroundArray.length === 4) {
-            $(this).css({"background-image": backgroundArray[0]});
-            $(this).css({"background-position": backgroundArray[1]});
-            $(this).css({"background-size": backgroundArray[2]});
-            $(this).css({"background-repeat": backgroundArray[3]});
+            $(this).css({"background-image": backgroundArray[ 0 ]});
+            $(this).css({"background-position": backgroundArray[ 1 ]});
+            $(this).css({"background-size": backgroundArray[ 2 ]});
+            $(this).css({"background-repeat": backgroundArray[ 3 ]});
         }
         else if (backgroundArray.length === 5) {
-            $(this).css({"background-image": backgroundArray[0]});
-            $(this).css({"background-position": backgroundArray[1]});
-            $(this).css({"background-attachment": backgroundArray[2]});
-            $(this).css({"background-repeat": backgroundArray[3]});
-            $(this).css({"background-size": backgroundArray[4]});
+            $(this).css({"background-image": backgroundArray[ 0 ]});
+            $(this).css({"background-position": backgroundArray[ 1 ]});
+            $(this).css({"background-attachment": backgroundArray[ 2 ]});
+            $(this).css({"background-repeat": backgroundArray[ 3 ]});
+            $(this).css({"background-size": backgroundArray[ 4 ]});
         }
     });
 }
 
-$(document).ready(function () {
-    if($('.backgroundDiv').length)
+$(document).ready(function ()
+{
+    if ($('.backgroundDiv').length)
     {
         $('.backgroundDiv.left').outerHeight($('.contentDiv.left').get(0).scrollHeight);
         $('.backgroundDiv.right').outerHeight($('.contentDiv.right').get(0).scrollHeight);
@@ -456,12 +527,18 @@ $(document).ready(function () {
             //Do Nothing
         }
     }
+
+    //Code that animates the jagged line
     if ($('#animatedLine').length > 0) {
         if ($('#animatedLine').get(0).getContext) {
+            //Set up the HTML5 canvas
             var canvas = $('#animatedLine').get(0).getContext('2d');
+            //Set the Canvas' width and style
             canvas.lineWidth = 2.5;
             canvas.strokeStyle = "#e9e9e9";
+            //Start drawing
             canvas.beginPath();
+            //Declare an array that holds objects indicating the various points the line would be drawn to
             var points = [];
             points.push({x: 0, y: 59});
             points.push({x: 80 * canvasContainerPercent, y: 59});
@@ -470,51 +547,46 @@ $(document).ready(function () {
             points.push({x: 100 * canvasContainerPercent, y: 59});
             points.push({x: 120 * canvasContainerPercent, y: 59});
             var incrementingPoints = [];
+            //Quotient defines the number of points that would be generated between two points
             var quotient = 20;
+            //For loop that draws the lines determined by the points in the objects in the array
             for (var i = 1; i < points.length; i++) {
-                var beginX = points[i - 1].x;
-                var endX = points[i].x;
-                var beginY = points[i - 1].y;
-                var endY = points[i].y;
-                var divisorX = Math.abs(endX - beginX);
-                var divisorY = Math.abs(endY - beginY);
+                var beginX = points[ i - 1 ].x;
+                var endX = points[ i ].x;
+                var beginY = points[ i - 1 ].y;
+                var endY = points[ i ].y;
+                var dX = Math.abs(endX - beginX);
+                var dY = Math.abs(endY - beginY);
+                //For loop creates 20 equal points between the two points.
                 for (var j = 0; j < quotient; j++) {
                     var x, y;
-                    if (beginX !== endX) {
-                        if (beginX < endX) {
-                            x = beginX + ((divisorX / quotient) * j);
-                        }
-                        else {
-                            x = beginX - ((divisorX / quotient) * j);
-                        }
-                    }
-                    else {
+                    if (beginX !== endX)
+                        if (beginX < endX)
+                            x = beginX + ((dX / quotient) * j);
+                        else
+                            x = beginX - ((dX / quotient) * j);
+                    else
                         x = endX;
-                    }
-                    if (beginY !== endY) {
-                        if (beginY < endY) {
-                            y = beginY + ((divisorY / quotient) * j);
-                        }
-                        else {
-                            y = beginY - ((divisorY / quotient) * j);
-                        }
-                    }
-                    else {
+                    if (beginY !== endY)
+                        if (beginY < endY)
+                            y = beginY + ((dY / quotient) * j);
+                        else
+                            y = beginY - ((dY / quotient) * j);
+                    else
                         y = endY;
-                    }
                     incrementingPoints.push({x: x, y: y});
                 }
             }
             var frames = 0;
-            canvas.moveTo(points[0].x, points[0].y);
+            canvas.moveTo(points[ 0 ].x, points[ 0 ].y);
             var req;
+            //Animates line but first checks if browser supports window.requestAnimationFrame function
             if (typeof requestAnimationFrame === "function") {
-                function animate() {
-                    if (frames < incrementingPoints.length - 1) {
+                function animate ()
+                {
+                    if (frames < incrementingPoints.length - 1)
                         req = requestAnimationFrame(animate);
-
-                    }
-                    canvas.lineTo(incrementingPoints[frames].x, incrementingPoints[frames].y);
+                    canvas.lineTo(incrementingPoints[ frames ].x, incrementingPoints[ frames ].y);
                     canvas.stroke();
                     frames++;
                 }
@@ -522,37 +594,40 @@ $(document).ready(function () {
                 req = requestAnimationFrame(animate);
                 cancelAnimationFrame(req);
 
-                var requestAnimateLine = setInterval(function () {
+
+                var requestAnimateLine = setInterval(function ()
+                {
                     if ($('.nextContent').hasClass('darken')) {
                         animate();
                         clearInterval(requestAnimateLine);
                     }
                 }, 700);
             }
+            //If it doesn't make use of setInterval to animate the line instead
             else {
-                function intervalAnimate() {
-                    var growingLineInterval = setInterval(function () {
-                        if (frames >= incrementingPoints.length - 1) {
+                function intervalAnimate ()
+                {
+                    var growingLineInterval = setInterval(function ()
+                    {
+                        if (frames >= incrementingPoints.length - 1)
                             clearInterval(growingLineInterval);
-                        }
-                        canvas.lineTo(incrementingPoints[frames].x, incrementingPoints[frames].y);
+                        canvas.lineTo(incrementingPoints[ frames ].x, incrementingPoints[ frames ].y);
                         canvas.stroke();
                         frames++;
                     }, 20);
                 }
 
-                var animateLine = setInterval(function () {
+                var animateLine = setInterval(function ()
+                {
                     if ($('.nextContent').hasClass('darken')) {
                         intervalAnimate();
                         clearInterval(animateLine);
                     }
                 }, 700);
-
             }
-
         }
         else {
-            //Do Nothing
+            //Do Nothing!
         }
     }
     $('.blogPost').outerHeight(blogWidth * 1.3);
@@ -565,24 +640,11 @@ $(document).ready(function () {
         'bottom': '15%'
     });
 
-    $('div.ericItem .descriptiveText').each(function () {
-        var percent = $(this).parent().outerHeight() / 100;
-        var height = $(this).outerHeight() / 2;
-        $(this).css({'top': (75 * percent) - height});
-        var width = $(this).siblings('img.borderRadii').outerWidth();
-        $(this).outerWidth(width);
-    });
-    $('.image .overlay').each(function () {
-        var height = $(this).siblings('img.borderRadii').outerHeight();
-        var width = $(this).siblings('img.borderRadii').outerWidth();
-        $(this).outerHeight(height).outerWidth(width);
-        var paddingLeft = parseInt($(this).parents('.image').css('padding-left'), 10) || 15;
-        var percentWidth = $(this).parents('.image').outerWidth() / 100;
-        $(this).css('left', paddingLeft + (5 * percentWidth) - 1);
-    });
+
     var videoHeight = $(window).width() / 1.745;
     $('#fullScreen').outerHeight(videoHeight);
-    $('.inlineBackground').each(function () {
+    $('.inlineBackground').each(function ()
+    {
         var attr = $(this).attr('eric-background');
         $(this).css({
             'background-image': attr,
@@ -591,14 +653,16 @@ $(document).ready(function () {
             'background-position': 'center'
         });
     });
-    $('.triangleBackground').each(function () {
+    $('.triangleBackground').each(function ()
+    {
         var imageHeight = $(this).outerHeight();
         $(this).siblings('.triangle').css('border-top-width', imageHeight);
         $(this).parents('.skewed').outerHeight(imageHeight);
     });
     $('.nextContent').outerHeight($('.nextContent').outerHeight() + (25 * vh));
     var readMoreCount = 0;
-    $('a.readMore').click(function (event) {
+    $('a.readMore').click(function ( event )
+    {
         event.preventDefault();
         readMoreCount += 1;
         var orijinalHeight = $(this).siblings('p').get(0).scrollHeight;
@@ -610,9 +674,15 @@ $(document).ready(function () {
             $(this).siblings('p').outerHeight(90).removeClass('readable');
             $(this).html("Read more");
         }
-
     });
-    $(window).scroll(function () {
+
+
+    $(window).scroll(function ()
+    {
+        $('.skewed').each(function ()
+        {
+            $(this).outerHeight($(this).find('.triangleBackground').outerHeight());
+        });
         if ($('.backgroundDiv').length) {
             if ($(window).scrollTop() >= $('.backgroundDiv.left').offset().top - 80)
                 $('.backgroundDiv.left').addClass('fixedBackground');
@@ -628,31 +698,9 @@ $(document).ready(function () {
         var testOffset = $('.skewed .triangle.down-right').length > 0 ? $('.skewed .triangle.down-right').offset().top : 0;
         var nextOffset = $('.nextContent').length > 0 ? $('.nextContent').offset().top : 0;
         var distance = navigationOffset - scrollTop;
-        var fixed01Offset = $('#fixed01').length > 0 ? $('#fixed01').offset().top : 0;
-        var fixed02Offset = $('#fixed02').length > 0 ? $('#fixed02').offset().top : 0;
-        var threeColumns1Offset = $('#collage').length > 0 ? $('#collage').offset().top : 0;
         var featuredProductsOffset = $('#featuredProducts').length > 0 ? $('#featuredProducts').offset().top : 0;
         if (scrollTop >= featuredProductsOffset) {
             $('.ericItem.left, .ericItem.right').addClass('rotate');
-        }
-        if (scrollTop >= fixed01Offset - 80) {
-            $('#fixed01 .fixed01').css({'width': (75 * vw) - 30, 'left': 0});
-            $('#fixed01 .fix01').addClass('fixed fixed01');
-        }
-        else {
-            $('#fixed01 .fix01').removeClass('fixed fixed01');
-        }
-        if (scrollTop >= fixed02Offset - 80 && scrollTop < threeColumns1Offset - (100 * vh)) {
-            $('#fixed02 .fixed01').css({'width': (75 * vw) - 30, 'right': 0, 'top': 80});
-            $('#fixed02 .fix01').addClass('fixed fixed01');
-            $('#fixed01 .fix01').show();
-        }
-        else if (scrollTop <= fixed02Offset - 80) {
-            $('#fixed02 .fix01').removeClass('fixed fixed01');
-        }
-        else {
-            $('#fixed01 .fix01').hide();
-            $('#fixed02 .fixed01').css({top: 80 + ((threeColumns1Offset - (100 * vh)) - scrollTop)});
         }
         if (distance < 1) {
             $('.navigation.largeView').toggleClass('scrolled', scrollTop > 80);
@@ -679,15 +727,40 @@ $(document).ready(function () {
         }
         if (scrollTop >= nextOffset - ($('.navigation.scrolled').outerHeight() + (25 * vh))) {
             $('.nextContent').addClass('darken');
-            setTimeout(function () {
+            setTimeout(function ()
+            {
                 $('.horizontal_bar').addClass('lengthen');
                 $('.fadeInOnScroll').addClass('fadeIn');
                 $('#image_behind_triangle, #image_behind_triangle img, canvas#sewed_triangle').fadeIn(800);
+                /*
+                setTimeout(function ()
+                {
+                 $('div.ericItem .descriptiveText').each(function ()
+                 {
+                     var percent = $(this).parent().outerHeight() / 100;
+                     var height = $(this).outerHeight() / 2;
+                     $(this).css({'top': (75 * percent) - height});
+                     var width = $(this).siblings('img.borderRadii').outerWidth();
+                     $(this).outerWidth(width);
+                 });
+                 $('.image .overlay').each(function ()
+                 {
+                     var height = $(this).siblings('img.borderRadii').outerHeight();
+                     var width = $(this).siblings('img.borderRadii').outerWidth();
+                     $(this).outerHeight(height).outerWidth(width);
+                     var paddingLeft = parseInt($(this).parents('.image').css('padding-left'), 10) || 15;
+                     var percentWidth = $(this).parents('.image').outerWidth() / 100;
+                     $(this).css('left', paddingLeft + (5 * percentWidth) - 1);
+                 });
+                 }, 801);
+                 */
+
                 $('.nextContent').find('.ericItem').css({'visibility': 'visible'});
             }, 400);
         } else if (scrollTop <= nextOffset - ($('.navigation.scrolled').outerHeight() + (25 * vh)) - 1) {
             $('.nextContent').removeClass('darken');
-            setTimeout(function () {
+            setTimeout(function ()
+            {
                 $('.horizontal_bar').removeClass('lengthen');
                 $('.fadeInOnScroll').removeClass('fadeIn');
                 $('#image_behind_triangle, #image_behind_triangle img, canvas#sewed_triangle').fadeOut(800);
@@ -697,22 +770,85 @@ $(document).ready(function () {
         }
     });
 
+    $(window).resize(function ()
+    {
+
+    });
+
+
+    $('.slideShow').each(function ()
+    {
+        if ($(this).css('position') == 'static')
+            $(this).css('position', 'relative');
+        var imgArray = [];
+        var slideShow = $(this);
+        var delay = $(this).attr('data-delay') || '9s';
+        delay = delay.replace("s", "");
+        delay = delay.replace("S", "");
+        delay = +delay;
+        var transitionDuration = $(this).attr('data-transition-duration');
+
+        $(this).find('img').each(function ()
+        {
+            imgArray.push($(this).attr('src'));
+        }).hide().detach();
+
+        $(this).append('<div class="slideShowScreen"></div>');
+        for (var i = 0; i < imgArray.length; i++)
+        {
+            $(this).find('.slideShowScreen').append('<div style="background-image: url(' + imgArray[ i ] + ');" class="eItem"></div>');
+        }
+        if (!(transitionDuration == false))
+        {
+            transitionDuration = transitionDuration.replace("s", "");
+            transitionDuration = transitionDuration.replace("S", "");
+            transitionDuration = +transitionDuration;
+            $(this).find('.eItem').css({
+                'transition': transitionDuration + 's',
+                '-moz-transition': transitionDuration + 's',
+                '-webkit-transition': transitionDuration + 's',
+                '-o-transition': transitionDuration + 's'
+            });
+        }
+        var index = 0;
+        slideShow.find('.slideShowScreen').find('.eItem').eq(index).addClass('selected');
+        setInterval(function ()
+        {
+            index += 1;
+            if (index >= imgArray.length)
+                index = 0;
+            slideShow.find('.slideShowScreen').find('.eItem').removeClass('selected').eq(index).addClass('selected');
+
+        }, (delay * 1000));
+    });
 
 });
 
-$(window).bind('load', function () {
+$(window).bind('load', function ()
+{
     //Functions for the next and previous buttons of the carousel controller.
     var carr = ericCarousel($('.ericCarousel'));
-    $('#carouselControl').find('.next').click(function () {
+    var triangleBackgroundNaturalHeight = document.getElementsByClassName('triangleBackground')[ 0 ].naturalHeight;
+    var triangleBackgroundNaturalWidth = document.getElementsByClassName('triangleBackground')[ 0 ].naturalWidth;
+    var triangleBackgroundAspectRatio = triangleBackgroundNaturalWidth / triangleBackgroundNaturalHeight;
+    var currentWidth = $('.triangleBackground').outerWidth();
+    currentHeight = currentWidth / triangleBackgroundAspectRatio;
+    $('.skewed').eq(0).outerHeight(currentHeight);
+    $('#carouselControl').find('.next').click(function ()
+    {
         carr.nexxt();
     });
-    $('#carouselControl').find('.previous').click(function () {
+    $('#carouselControl').find('.previous').click(function ()
+    {
         carr.previous();
     });
     //Pauses the carousel on hover.
-    $('.ericItem').hover(function () {
+    $('.ericItem').hover(function ()
+    {
         carr.pauuse();
-    }, function () {
+
+    }, function ()
+    {
         carr.resume();
     });
     //Put the current index on the carousel indicator
@@ -722,4 +858,5 @@ $(window).bind('load', function () {
 
     //Product carousel
     ericSweetView($('#featuredCarousel'));
+
 });

@@ -21,7 +21,7 @@
         <link rel="stylesheet" href="css/styles.min.css">
         <script src="js/jquery-3.2.1.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
-        <script src="js/script.js"></script>
+        <script src="js/script.min.js"></script>
     </head>
     <body>
         <div id="fullScreen">
@@ -159,8 +159,8 @@
                                 <div class="fill fix"></div>
                             </div>
                             <div id="carouselControl">
-                                <div data-toggle="tooltip" title="Previous Page" class="previous control"></div>
-                                <div data-toggle="tooltip" title="Next Page" class="next control"></div>
+                                <div class="previous control"><i class="fa fa-angle-left"></i></div>
+                                <div class="next control"><i class="fa fa-angle-right"></i></div>
                             </div>
                         </div>
                     </div>

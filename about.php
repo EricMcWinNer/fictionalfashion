@@ -14,6 +14,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <title>About | Fictional Fashion</title>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,700,800,900" rel="stylesheet">
     <!--<link href="https://fonts.googleapis.com/css?family=Montserrat+Alternates:400,700,800,900" rel="stylesheet">-->
     <link rel="stylesheet" href="css/bootstrap.min.min.css">
     <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css">

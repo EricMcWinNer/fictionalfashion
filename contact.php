@@ -33,7 +33,7 @@
         <div id="halfScreen" class="contactScreen">
             <?php include 'partitions/navigation.php'; ?>
             <div class="text-center about">
-                <h1 class="monster-bold">Contact us</h1>
+                <h1 class="monster-bold">contact us</h1>
                 <p class="lead segoe">WANT TO REACH OUT TO US? IT'S REALLY EASY...</p>
             </div>
         </div>
@@ -68,7 +68,7 @@
                             </div>
                         </div>
                         <hr />
-                        <h3 class="poppins marginTop XL">Drop a message, we'll get back to you shortly...</h3>
+                        <h3 id="messageH3" class="poppins marginTop XL">Drop a message, we'll get back to you shortly...</h3>
                         <form action="" id="contactForm" method="">
                             <div class="fullWidth marginTop">
                                 <input type="text" name="fullName" placeholder="Full Name">
@@ -85,7 +85,7 @@
                             <div class="fullWidth textarea">
                                 <textarea name="message" placeholder="Type a message"></textarea>
                             </div>
-                            <button type="submit" id="submitButton">Send Message</button>
+                            <button type="submit" id="submitButton"><i class="fa fa-envelope-"></i> Send Message</button>
                         </form>
                     </div>
                 </div>
